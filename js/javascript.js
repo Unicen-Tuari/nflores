@@ -1,6 +1,6 @@
 $(".rotacion").mousemove(function (event){
-	$("#siguelo").css("left",event.clientX);
-	$("#siguelo").css("top",event.clientY);
+	$("#siguelo").css("left",event.clientX+10);
+	$("#siguelo").css("top",event.clientY+5);
 	$("#siguelo").css("opacity","1");
 });
 				
