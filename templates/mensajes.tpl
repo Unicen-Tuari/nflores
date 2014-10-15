@@ -17,7 +17,7 @@
 				<div class="row cabezera">
 					<p>$titulo</p>
 				</div>
-				{foreach X}
+				{foreach from=$query item=mensajes}
 				<div class="row tema">
 					<div class="col-lg-2">
 						$perfil usuario
