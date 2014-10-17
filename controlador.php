@@ -18,16 +18,44 @@ class Controller
 		public function temas (){
 			$this->view->mostrar_temas($this->model->data);
 		}
-		
-		public function Ejecutar()
-		{
-				//Vista de foro
-				$this->query("request");
-				vista();//funcion de arriba para llamar a vista
+		//funcion para analisis general
+		public function Analizar($pagina){
+			if ($pagina = 'foro'){
+				$this->view->mostrarforo();
+				die();
+			}
+			if ($pagina = 'estrategias'){
+				$consulta = "SELECT * FROM temas WHERE nombretema like '".$pagina."' ;";
+				$data = $this->model->query($consulta);
+				$this->view->mostrartemas($data);
+				die();
+			}
+			/*if ($pagina = 'builds'){
+				$this->model->query();
+				$this->view->mostrar();
+			}
+			if ($pagina = 'chat'){
+				$this->model->query();
+				$this->view->mostrar();
+			}
+			if ($pagina = 'campeones'){
+				$this->model->query();
+				$this->view->mostrar();
+			}
+			if ($pagina = 'bugs'){
+				$this->model->query();
+				$this->view->mostrar();
+			}
+			if ($pagina = 'partidas'){
+				$this->model->query();
+				$this->view->mostrar();
+			}
+			if ($pagina = 'eventos'){
+				$this->model->query();
+				$this->view->mostrar();
+			}*/
 		}
 		
-		public function Analizar($variable){
-			
-		}
+		//public function analizartemas(){}
 }
 ?>

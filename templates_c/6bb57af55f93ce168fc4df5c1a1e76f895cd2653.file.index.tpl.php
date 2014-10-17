@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-10-11 07:33:54
+<?php /* Smarty version Smarty-3.1.19, created on 2014-10-17 21:23:58
          compiled from ".\templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:82755438bd93d617a6-62136083%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6bb57af55f93ce168fc4df5c1a1e76f895cd2653' => 
     array (
       0 => '.\\templates\\index.tpl',
-      1 => 1413005630,
+      1 => 1413573835,
       2 => 'file',
     ),
   ),
@@ -86,6 +86,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 							</div>
 						</div>
 					</div>
+				<a href="index.php?action=foro"><p>Foro</p></a>
 				</div>
 					<div class='col-lg-3 columna-derecha'>
 						<div class='col-lg-12 rotacion'>

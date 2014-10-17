@@ -8,21 +8,21 @@ error_reporting(E_ALL);
 ini_set("display_errors",1);
 
 require('libs/Smarty.class.php');	
+
 include_once 'modelodb.php';
-include_once 'controlador.php';
 include_once 'vistas.php';
-/*$model = new ModeloDB();
-$view = new Vistas();//TERMINAR
+include_once 'controlador.php';
+$model = new ModeloDB();
+$view = new Vista();//TERMINAR
 $controller = new controller($model, $view);
 
-if(! array_key_exists('action', $_REQUEST) && $_REQUEST['action']=='foro')
+if(array_key_exists('action', $_REQUEST) && $_REQUEST['action']!=='index')
 {
   $controller->Analizar($_REQUEST["action"]);
 }
-else {*/
- $view->mostrarindex();
-//}
-
+else {
+	$view->mostrarindex();
+}
 
 
 

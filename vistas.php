@@ -1,18 +1,24 @@
 <?php
-
-require('libs/Smarty.class.php');	
-
 class Vista{
 	
-	protected $smart;
+	protected $smarty;
 		
 	public function __construct() {
-        $smart = new Smarty();
-		$smart->debugging = true;
+        $this->smarty = new Smarty();
+		$this->smarty->debugging = true;
     }
 	
-	public function monstrarindex(){
-		$this->smart->display('index.tpl');		
+	public function mostrarindex(){
+		$this->smarty->display('index.tpl');		
+	}
+	
+	public function mostrarforo(){
+		$this->smarty->display('indexforo.tpl');		
+	}
+	
+	public function mostrartemas($data){
+		$this->smarty->assign('tema', $data);
+		$this->smarty->display('temas.tpl');
 	}
 	
 }
