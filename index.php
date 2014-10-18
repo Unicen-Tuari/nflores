@@ -21,7 +21,8 @@ if(array_key_exists('action', $_REQUEST) && $_REQUEST['action']!=='index')
   $controller->Analizar($_REQUEST["action"]);
 }
 else {
-	$view->mostrarindex();
+	$view->mostrartemas();
+	//$view->mostrarindex();
 }
 
 

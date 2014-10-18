@@ -16,8 +16,8 @@ class Vista{
 		$this->smarty->display('indexforo.tpl');		
 	}
 	
-	public function mostrartemas($data){
-		$this->smarty->assign('tema', $data);
+	public function mostrartemas(){
+		//$this->smarty->assign('tema', $data);
 		$this->smarty->display('temas.tpl');
 	}
 	

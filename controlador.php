@@ -9,15 +9,6 @@ class Controller
 		$this->view = $view;
     }
 	
-		public function mensajes (){
-			$this->view->mostrar_mensajes($this->model->data);
-		}
-		public function eventos (){
-			$this->view->mostrar_eventos($this->model->data);
-		}
-		public function temas (){
-			$this->view->mostrar_temas($this->model->data);
-		}
 		//funcion para analisis general
 		public function Analizar($pagina){
 			if ($pagina = 'foro'){
@@ -27,8 +18,10 @@ class Controller
 			if ($pagina = 'estrategias'){
 				$consulta = "SELECT * FROM temas WHERE nombretema like '".$pagina."' ;";
 				$data = $this->model->query($consulta);
-				$this->view->mostrartemas($data);
+				var_dump($data);
 				die();
+				$this->view->mostrartemas($data);
+				
 			}
 			/*if ($pagina = 'builds'){
 				$this->model->query();
