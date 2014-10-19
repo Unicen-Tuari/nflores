@@ -1,5 +1,5 @@
 {include file="header.tpl" title=foo}
-
+<body>
 <div class="container">
 		<div class="row fondonegro ">
 			<div class="col-lg-12">
@@ -78,9 +78,11 @@
 								</ul>
 							</div>
 						</div>
+						
+						
 					</div>
 			</div>
 		</div>
 </div>
-
+</body>
 {include file="footer.tpl"}

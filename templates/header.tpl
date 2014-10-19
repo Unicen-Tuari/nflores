@@ -11,4 +11,3 @@
 	<script src="js/bootstrap.js"></script>
 	<script src="js/javascript.js"></script>
 </head>
-<body>

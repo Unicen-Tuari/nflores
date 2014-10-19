@@ -11,17 +11,13 @@ class Controller
 	
 		//funcion para analisis general
 		public function Analizar($pagina){
-			if ($pagina = 'foro'){
+			if ($pagina == 'foro'){
 				$this->view->mostrarforo();
-				die();
-			}
-			if ($pagina = 'estrategias'){
+			};
+			if ($pagina == 'estrategias'){
 				$consulta = "SELECT * FROM temas WHERE nombretema like '".$pagina."' ;";
 				$data = $this->model->query($consulta);
-				var_dump($data);
-				die();
 				$this->view->mostrartemas($data);
-				
 			}
 			/*if ($pagina = 'builds'){
 				$this->model->query();

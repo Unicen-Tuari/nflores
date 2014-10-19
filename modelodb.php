@@ -9,6 +9,7 @@ class ModeloDB{
 	protected $conn = null;
 	
 	protected function conectar(){
+		$conn = null;
 		try{
 			$this->conn = new PDO(
 				"mysql:host=$this->host;dbname=$this->db",
@@ -19,7 +20,8 @@ class ModeloDB{
 		catch(PDOException $pe){
 			die('Error de conexion, Mensaje: ' .$pe->getMessage());
 		}
-		return $this->conn;
+		$this->conn = $conn;
+		return $conn;
 	}
 
 	
@@ -31,15 +33,15 @@ class ModeloDB{
 	
 	
 	public function query($sql){
-	
+		echo ($sql);
 		$this->conn = $this->coneccion();		
 		$resultado = $this->conn->prepare($sql);
+		
 		$resultado->execute();
 		if(!$resultado){
 			die(print($this->conn->errorInfo()));
 		}
 		$data=$resultado->fetchAll(PDO::FETCH_ASSOC);
-		var_dump($data);
 		return $data;
 		
 	}
