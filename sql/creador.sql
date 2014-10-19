@@ -1,24 +1,3 @@
-CREATE TABLE Mensajes
-(
-	idmensaje int NOT NULL AUTO_INCREMENT,
-	idtema int(10) not null,
-	mensaje varchar(600) not null,
-	idusuario character (20) not null,
-	urlimagen character (50) DEFAULT 'Portada_perfil.PNG',
-	CONSTRAINT PK_Mensajes PRIMARY KEY (idmensaje),
-	CONSTRAINT FK_Mensajes2 FOREIGN KEY (idtema) REFERENCES Temas(idtema),
-	CONSTRAINT FK_Mensajes3 FOREIGN KEY (idcreador) REFERENCES Usuario(idusuario)
-);
-
-CREATE TABLE Temas
-(
-	idtema int (10) not null AUTO_INCREMENT,
-	nombretema varchar (20) not null,
-	idusuario int (20) not null,
-	temageneral varchar (20) not null,
-	CONSTRAINT PK_temas primary key (idtema),
-	CONSTRAINT FK_temas2 FOREIGN KEY (idcreador) REFERENCES Usuario(idusuario)
-);
 CREATE TABLE Usuario
 (
 	idusuario int (20) not null,
@@ -28,7 +7,26 @@ CREATE TABLE Usuario
 	nacion varchar (15) not null,
 	CONSTRAINT PK_usuario primary key (idusuario)
 );
-
+CREATE TABLE Temas
+(
+	idtema int (10) not null AUTO_INCREMENT,
+	nombretema varchar (20) not null,
+	idusuario int (20) not null,
+	temageneral varchar (20) not null,
+	CONSTRAINT PK_temas primary key (idtema),
+	CONSTRAINT FK_temas2 FOREIGN KEY (idusuario) REFERENCES Usuario(idusuario)
+);
+CREATE TABLE Mensajes
+(
+	idmensaje int NOT NULL AUTO_INCREMENT,
+	idtema int(10) not null,
+	mensaje varchar(600) not null,
+	idusuario character (20) not null,
+	urlimagen character (50) DEFAULT 'Portada_perfil.PNG',
+	CONSTRAINT PK_Mensajes PRIMARY KEY (idmensaje),
+	CONSTRAINT FK_Mensajes2 FOREIGN KEY (idtema) REFERENCES Temas(idtema),
+	CONSTRAINT FK_Mensajes3 FOREIGN KEY (idusuario) REFERENCES Usuario(idusuario)
+);
 CREATE TABLE eventos
 (
 	idusuario int (20) not null,
@@ -37,7 +35,8 @@ CREATE TABLE eventos
 	Nombre varchar (20) not null,
 	Tipo varchar (20) not null,
 	Password character (20) not null,
-	CONSTRAINT PK_eventos primary key (idevento)
+	CONSTRAINT PK_eventos primary key (idevento),
+	CONSTRAINT FK_eventos2 FOREIGN KEY (idusuario) REFERENCES Usuario(idusuario)
 );
 
 INSERT INTO Mensajes (idmensaje,mensaje,idtema, idusuario)

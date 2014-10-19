@@ -1,17 +1,5 @@
 {include file="headerforo.tpl" title=foo}
-<body>
-	<div class="container columna">
-		<div class="row">
-			<div class="col-lg-12">
-				<ul class="list-inline top">
-					<li><a href="#"><img src="imagenes/twiter.png" class="img-rounded"/></a></li>
-					<li><a href="https://www.facebook.com/NasaTactics"><img src="imagenes/facebook.png" class="img-rounded"/></a></li>
-					<li><a href="#"><img src="imagenes/youtube.png" class="img-rounded"/></a></li>
-					<li><a href="#"><img src="imagenes/twitch.png" class="img-rounded"/></a></li>
-				</ul>
-			</div>
-		</div>
-		<img src="imagenes/Portada_main2.png" class="img-responsive imagenteam"/>
+
 		<div class="row menumensajes">
 			<div class="col-lg-12 seccion">
 				<div class="row cabezera">

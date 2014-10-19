@@ -17,8 +17,8 @@ class Vista{
 	}
 	
 	public function mostrartemas($data){
-		print_r($data);
-		$this->smarty->assign('tema', $data);
+		$this->smarty->assign('temas', $data);
+		$this->smarty->assign('nombretema', $data.temageneral);
 		$this->smarty->display('temas.tpl');
 	}
 	

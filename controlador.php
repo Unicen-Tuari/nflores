@@ -15,7 +15,7 @@ class Controller
 				$this->view->mostrarforo();
 			};
 			if ($pagina == 'estrategias'){
-				$consulta = "SELECT * FROM temas WHERE nombretema like '".$pagina."' ;";
+				$consulta = "SELECT * FROM temas WHERE temageneral like '".$pagina."' ;";
 				$data = $this->model->query($consulta);
 				$this->view->mostrartemas($data);
 			}
