@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-10-17 22:38:19
+<?php /* Smarty version Smarty-3.1.19, created on 2014-10-19 04:34:51
          compiled from ".\templates\indexforo.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13287543a065c511e22-90182090%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5e3f11ef5dc40692b8a22b318d9073215e48f050' => 
     array (
       0 => '.\\templates\\indexforo.tpl',
-      1 => 1413578297,
+      1 => 1413685495,
       2 => 'file',
     ),
   ),
@@ -110,7 +110,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	</div>
   </body>
   
-
 <?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 <?php }} ?>

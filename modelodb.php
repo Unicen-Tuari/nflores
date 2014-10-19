@@ -11,7 +11,7 @@ class ModeloDB{
 	protected function conectar(){
 		$conn = null;
 		try{
-			$this->conn = new PDO(
+			$conn = new PDO(
 				"mysql:host=$this->host;dbname=$this->db",
 				$this->user,
 				$this->pass
@@ -20,7 +20,6 @@ class ModeloDB{
 		catch(PDOException $pe){
 			die('Error de conexion, Mensaje: ' .$pe->getMessage());
 		}
-		$this->conn = $conn;
 		return $conn;
 	}
 
@@ -34,7 +33,7 @@ class ModeloDB{
 	
 	public function query($sql){
 		echo ($sql);
-		$this->conn = $this->coneccion();		
+		$this->conn = $this->conectar();		
 		$resultado = $this->conn->prepare($sql);
 		
 		$resultado->execute();

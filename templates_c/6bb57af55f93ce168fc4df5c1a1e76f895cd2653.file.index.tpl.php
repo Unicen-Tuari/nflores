@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-10-17 21:23:58
+<?php /* Smarty version Smarty-3.1.19, created on 2014-10-19 05:17:06
          compiled from ".\templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:82755438bd93d617a6-62136083%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6bb57af55f93ce168fc4df5c1a1e76f895cd2653' => 
     array (
       0 => '.\\templates\\index.tpl',
-      1 => 1413573835,
+      1 => 1413685387,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5438bd941a1b76_47282874')) {function content_5438bd941a1b76_47282874($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>'foo'), 0);?>
 
-
+<body>
 <div class="container">
 		<div class="row fondonegro ">
 			<div class="col-lg-12">
@@ -100,11 +100,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 								</ul>
 							</div>
 						</div>
+						
+						
 					</div>
 			</div>
 		</div>
 </div>
-
+</body>
 <?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 <?php }} ?>
