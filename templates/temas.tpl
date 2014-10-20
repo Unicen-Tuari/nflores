@@ -3,7 +3,7 @@
 <div class="row menumensajes">
 	<div class="col-lg-12 seccion">
 		<div class="row cabezera">
-			<p>Nombre del tema</p>
+			<p>{$nombretema}</p>
 		</div>
 		{foreach key=pid item=tema from=$temas}
 			<div class="row tema">
@@ -11,7 +11,7 @@
 					<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 				</div>
 				<div class="col-lg-8 textomenu">
-					<a href="index.php?action={$tema.nombretema}"><p>{$tema.nombretema}</p></a>
+					<a href="index.php?action=mensaje&nombre={$nombretema}"><p>{$tema.nombretema}</p></a>
 				</div>
 			</div>
 		{/foreach}

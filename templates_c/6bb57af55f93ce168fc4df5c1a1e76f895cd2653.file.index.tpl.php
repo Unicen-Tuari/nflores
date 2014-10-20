@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-10-19 23:56:41
+<?php /* Smarty version Smarty-3.1.19, created on 2014-10-20 14:46:48
          compiled from ".\templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3236854443399585c95-55822848%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6bb57af55f93ce168fc4df5c1a1e76f895cd2653' => 
     array (
       0 => '.\\templates\\index.tpl',
-      1 => 1413685387,
+      1 => 1413809201,
       2 => 'file',
     ),
   ),
@@ -15,9 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
   'unifunc' => 'content_5444339968f6d4_33321550',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5444339968f6d4_33321550')) {function content_5444339968f6d4_33321550($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>'foo'), 0);?>
 
@@ -86,7 +86,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 							</div>
 						</div>
 					</div>
-				<a href="index.php?action=foro"><p>Foro</p></a>
+				<a href="index.php?action=foro&nombre=nada"><p>Foro</p></a>
 				</div>
 					<div class='col-lg-3 columna-derecha'>
 						<div class='col-lg-12 rotacion'>

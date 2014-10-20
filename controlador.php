@@ -10,41 +10,28 @@ class Controller
     }
 	
 		//funcion para analisis general
-		public function Analizar($pagina){
-			if ($pagina == 'foro'){
+		public function Analizar($accion,$nombre){
+			if ($accion == 'foro'){
 				$this->view->mostrarforo();
 			};
-			if ($pagina == 'estrategias'){
-				$consulta = "SELECT * FROM temas WHERE temageneral like '".$pagina."' ;";
+			if ($accion == 'tema'){
+				if ($nombre == 'partida'){
+					$consulta = "SELECT * FROM eventos WHERE tipo like '".$nombre."' ;";
+					$data = $this->model->query($consulta);
+					$this->view->mostrareventos($data);
+				}
+				else{
+					$consulta = "SELECT * FROM temas WHERE temageneral like '".$nombre."' ;";
+					$data = $this->model->query($consulta);
+					$this->view->mostrartemas($data,$nombre);
+				}
+			}
+			if ($accion == 'mensaje'){
+				//SELECT * FROM mensajes m,temas t WHERE (temageneral like 'estrategias') AND (m.idtema = t.idtema) ;
+				$consulta = "SELECT * FROM mensajes m,temas t,usuario u WHERE (temageneral like '".$nombre."') AND (m.idtema = t.idtema) ;";
 				$data = $this->model->query($consulta);
-				$this->view->mostrartemas($data);
+				$this->view->mostrarmensajes($data,$nombre);
 			}
-			/*if ($pagina = 'builds'){
-				$this->model->query();
-				$this->view->mostrar();
-			}
-			if ($pagina = 'chat'){
-				$this->model->query();
-				$this->view->mostrar();
-			}
-			if ($pagina = 'campeones'){
-				$this->model->query();
-				$this->view->mostrar();
-			}
-			if ($pagina = 'bugs'){
-				$this->model->query();
-				$this->view->mostrar();
-			}
-			if ($pagina = 'partidas'){
-				$this->model->query();
-				$this->view->mostrar();
-			}
-			if ($pagina = 'eventos'){
-				$this->model->query();
-				$this->view->mostrar();
-			}*/
 		}
-		
-		//public function analizartemas(){}
 }
 ?>

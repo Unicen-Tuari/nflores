@@ -5,7 +5,6 @@ class Vista{
 		
 	public function __construct() {
         $this->smarty = new Smarty();
-		$this->smarty->debugging = true;
     }
 	
 	public function mostrarindex(){
@@ -16,10 +15,21 @@ class Vista{
 		$this->smarty->display('indexforo.tpl');		
 	}
 	
-	public function mostrartemas($data){
+	public function mostrareventos($data){
+		$this->smarty->assign('evento', $data);
+		$this->smarty->display('partidas.tpl');
+	}
+	
+	public function mostrartemas($data,$nombre){
 		$this->smarty->assign('temas', $data);
-		$this->smarty->assign('nombretema', $data.temageneral);
+		$this->smarty->assign('nombretema', $nombre);
 		$this->smarty->display('temas.tpl');
+	}
+	
+	public function mostrarmensajes($data,$nombre){
+		$this->smarty->assign('mensajes', $data);
+		$this->smarty->assign('nombretema', $nombre);
+		$this->smarty->display('mensajes.tpl');
 	}
 	
 }

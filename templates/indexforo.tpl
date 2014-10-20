@@ -10,7 +10,7 @@
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
 					<div class="col-lg-8 textomenu">
-						<a href="index.php?action=estrategias"><p>Estrategias</p></a>
+						<a href="index.php?action=tema&nombre=estrategias"><p>Estrategias</p></a>
 					</div>
 				</div>
 				<div class="row tema">
@@ -18,7 +18,7 @@
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
 					<div class="col-lg-8 textomenu">
-						<a href="index.php?action=builds"><p>Items por campeon</p></a>
+						<a href="index.php?action=tema&nombre=items"><p>Items por campeon</p></a>
 					</div>
 				</div>
 				<div class="row tema">
@@ -26,7 +26,7 @@
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
 					<div class="col-lg-8 textomenu">
-						<a href="index.php?action=chat"><p>Chat</p></a>
+						<a href="index.php?action=tema&nombre=chat"><p>Chat</p></a>
 					</div>
 				</div>
 			</div>
@@ -39,7 +39,7 @@
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
 					<div class="col-lg-8 textomenu">
-						<a href="index.php?action=campeones"><p>Leyendas/Campeones</p></a>
+						<a href="index.php?action=tema&nombre=campeones"><p>Leyendas/Campeones</p></a>
 					</div>
 				</div>
 				<div class="row tema">
@@ -47,7 +47,7 @@
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
 					<div class="col-lg-8 textomenu">
-						<a href="index.php?action=bugs"><p>Bugs</p></a>
+						<a href="index.php?action=tema&nombre=bugs"><p>Bugs</p></a>
 					</div>
 				</div>
 			</div>
@@ -60,7 +60,7 @@
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
 					<div class="col-lg-8 textomenu">
-						 <a href="index.php?action=partidas"><p>Organizador de Partidas</p></a>
+						 <a href="index.php?action=tema&nombre=partida"><p>Organizador de Partidas</p></a>
 					</div>
 				</div>
 				<div class="row tema">
@@ -68,7 +68,7 @@
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
 					<div class="col-lg-8 textomenu">
-						<a href="index.php?action=eventos"><p>Eventos y Sorteos</p></a>
+						<a href="index.php?action=tema&nombre=evento"><p>Eventos y Sorteos</p></a>
 					</div>
 				</div>
 			</div>

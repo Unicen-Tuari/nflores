@@ -32,7 +32,6 @@ class ModeloDB{
 	
 	
 	public function query($sql){
-		echo ($sql);
 		$this->conn = $this->conectar();		
 		$resultado = $this->conn->prepare($sql);
 		
