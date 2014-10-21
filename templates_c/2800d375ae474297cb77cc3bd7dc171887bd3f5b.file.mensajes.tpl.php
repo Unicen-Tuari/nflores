@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-10-20 15:17:32
+<?php /* Smarty version Smarty-3.1.19, created on 2014-10-21 16:41:55
          compiled from ".\templates\mensajes.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13256544508591198d5-56040169%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2800d375ae474297cb77cc3bd7dc171887bd3f5b' => 
     array (
       0 => '.\\templates\\mensajes.tpl',
-      1 => 1413810822,
+      1 => 1413902465,
       2 => 'file',
     ),
   ),
@@ -43,19 +43,32 @@ $_smarty_tpl->tpl_vars['mensaje']->_loop = true;
 ?>
 				<div class="row tema">
 					<div class="col-lg-2">
+						<img src="imagenes/<?php echo $_smarty_tpl->tpl_vars['mensaje']->value['avatar'];?>
+"/>
 						<?php echo $_smarty_tpl->tpl_vars['mensaje']->value['nombre'];?>
 
 					</div>
-					<div class="col-lg-8 textomenu">
+					<div class="col-lg-8 textomenu" id="<?php echo $_smarty_tpl->tpl_vars['mensaje']->value['idmensaje'];?>
+">
 						<?php echo $_smarty_tpl->tpl_vars['mensaje']->value['mensaje'];?>
 
 					</div>
 				</div>
+				<hr>
 				<?php } ?>
-				<div id="hueco para ajax mensaje>
+				<div id="huecoajax>
 				</div>
 			</div>
 		</div>
+		<a href="index.php?action=index&nombre=nada">Index</a>-> <a href="index.php?action=tema&nombre=<?php echo $_smarty_tpl->tpl_vars['mensaje']->value['temageneral'];?>
+"><?php echo $_smarty_tpl->tpl_vars['mensaje']->value['temageneral'];?>
+</a>
+			<form action="accion.php?action=ajaxmensaje" method="post">
+				<p>Mensaje:</p>
+				<p><textarea rows="10" cols="100" name="mensajem"></textarea></p>
+				<p><input type="submit" value="Post"/></p>
+			</form>
+</div>	
 </body>
   
 

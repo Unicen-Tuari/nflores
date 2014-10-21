@@ -43,6 +43,18 @@ class ModeloDB{
 		return $data;
 		
 	}
+	
+	public function borrar(){
+	
+	}
+	
+	public function insertar(){
+	
+	}
+	
+	public function editar(){
+	
+	}
 	 
 	
 }

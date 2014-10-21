@@ -16,6 +16,13 @@
 			</div>
 		{/foreach}
 	</div>
+	<a href="index.php?action=foro&nombre=nada">Index</a><br><br>
+	<form action="accion.php?action=creartema" method="post">
+		<p>Nuevo tema: <input type="text" name="nombretema"></p>
+		<p>Mensaje:</p>
+		<p><textarea rows="10" cols="100" name="mensajetema"></textarea></p>
+		<p><input type="submit" value="Post"/></p>
+	</form>
 </div>
 </div>
 </body>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-10-20 15:26:26
+<?php /* Smarty version Smarty-3.1.19, created on 2014-10-21 16:28:42
          compiled from ".\templates\temas.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:12823544426c83299a5-73836771%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a7a3a393c69fed29e93bbbc93d7ce75238b49733' => 
     array (
       0 => '.\\templates\\temas.tpl',
-      1 => 1413811491,
+      1 => 1413901720,
       2 => 'file',
     ),
   ),
@@ -53,6 +53,13 @@ $_smarty_tpl->tpl_vars['tema']->_loop = true;
 			</div>
 		<?php } ?>
 	</div>
+	<a href="index.php?action=foro&nombre=nada">Index</a><br><br>
+	<form action="accion.php?action=creartema" method="post">
+		<p>Nuevo tema: <input type="text" name="nombretema"></p>
+		<p>Mensaje:</p>
+		<p><textarea rows="10" cols="100" name="mensajetema"></textarea></p>
+		<p><input type="submit" value="Post"/></p>
+	</form>
 </div>
 </div>
 </body>

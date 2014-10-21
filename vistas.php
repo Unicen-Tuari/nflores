@@ -29,6 +29,7 @@ class Vista{
 	public function mostrarmensajes($data,$nombre){
 		$this->smarty->assign('mensajes', $data);
 		$this->smarty->assign('nombretema', $nombre);
+		var_dump($data);
 		$this->smarty->display('mensajes.tpl');
 	}
 	
