@@ -27,10 +27,25 @@ class Controller
 				}
 			}
 			if ($accion == 'mensaje'){
-				//SELECT * FROM mensajes m,temas t WHERE (temageneral like 'estrategias') AND (m.idtema = t.idtema) ;
-				$consulta = "SELECT * FROM mensajes m,temas t,usuario u WHERE (temageneral like '".$nombre."') AND (m.idtema = t.idtema) ;";
+				$consulta = "SELECT * FROM mensajes m,temas t,usuario u WHERE (nombretema like '".$nombre."') AND (m.idtema = t.idtema) ;";
 				$data = $this->model->query($consulta);
 				$this->view->mostrarmensajes($data,$nombre);
+			}
+			if ($accion == 'creartema'){
+				$nombretema = $_POST['nombretema'];
+				$mensaje = $_POST ['mensajetema'];
+				$idtema = $_POST ['idtema'];
+				$sql = "INSERT INTO temas (nombretema,idusuario,temageneral) VALUES (".$nombretema.",1,'".$nombre."');";
+				//$sql2= "INSERT INTO mensajes (mensaje,idusuario,idtema) VALUES (".$mensaje.",1,".$idtema.");";
+				$this->model->insertar($sql);
+			}
+			
+			if ($accion == 'mensajeAjax'){
+				$r = array(
+					'codigoHTML' => '<h1>SALIO!!</h1>',
+				);
+				echo jsonp_encode($r);
+				exit();
 			}
 		}
 }

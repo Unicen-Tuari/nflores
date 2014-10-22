@@ -44,16 +44,15 @@ class ModeloDB{
 		
 	}
 	
-	public function borrar(){
-	
-	}
-	
-	public function insertar(){
-	
-	}
-	
-	public function editar(){
-	
+	public function insertar($sql){
+			$this->conn = $this->conectar();
+			$insercion=$this->conn->prepare($sql);
+			echo ($sql);
+			$insercion->execute();
+			if(!$insercion){
+			die(print($this->conn->errorInfo()));
+			}
+			//$this->query($sql2);
 	}
 	 
 	

@@ -14,7 +14,7 @@ $controller = new controller($model, $view);
 
 if(array_key_exists('action', $_REQUEST) && $_REQUEST['action']!=='index')
 {
-  $controller->Analizar($_REQUEST['action'],$_REQUEST['nombre']);
+	$controller->Analizar($_REQUEST['action'],$_REQUEST['nombre']);
 }
 else {
 	$view->mostrarindex();

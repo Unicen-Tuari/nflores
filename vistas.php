@@ -23,12 +23,15 @@ class Vista{
 	public function mostrartemas($data,$nombre){
 		$this->smarty->assign('temas', $data);
 		$this->smarty->assign('nombretema', $nombre);
+		$this->smarty->assign('idt',$data[0]['idtema']);
+		var_dump($data);
 		$this->smarty->display('temas.tpl');
 	}
 	
 	public function mostrarmensajes($data,$nombre){
 		$this->smarty->assign('mensajes', $data);
 		$this->smarty->assign('nombretema', $nombre);
+		$this->smarty->assign('idt',$data[0]['idtema']);
 		var_dump($data);
 		$this->smarty->display('mensajes.tpl');
 	}

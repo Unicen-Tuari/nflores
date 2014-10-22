@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-10-21 16:28:42
+<?php /* Smarty version Smarty-3.1.19, created on 2014-10-22 22:44:25
          compiled from ".\templates\temas.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:12823544426c83299a5-73836771%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a7a3a393c69fed29e93bbbc93d7ce75238b49733' => 
     array (
       0 => '.\\templates\\temas.tpl',
-      1 => 1413901720,
+      1 => 1414010349,
       2 => 'file',
     ),
   ),
@@ -22,6 +22,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'nombretema' => 0,
     'temas' => 0,
     'tema' => 0,
+    'idt' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -46,7 +47,7 @@ $_smarty_tpl->tpl_vars['tema']->_loop = true;
 					<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 				</div>
 				<div class="col-lg-8 textomenu">
-					<a href="index.php?action=mensaje&nombre=<?php echo $_smarty_tpl->tpl_vars['nombretema']->value;?>
+					<a href="index.php?action=mensaje&nombre=<?php echo $_smarty_tpl->tpl_vars['tema']->value['nombretema'];?>
 "><p><?php echo $_smarty_tpl->tpl_vars['tema']->value['nombretema'];?>
 </p></a>
 				</div>
@@ -54,10 +55,13 @@ $_smarty_tpl->tpl_vars['tema']->_loop = true;
 		<?php } ?>
 	</div>
 	<a href="index.php?action=foro&nombre=nada">Index</a><br><br>
-	<form action="accion.php?action=creartema" method="post">
+	<form action="index.php?action=creartema&nombre=<?php echo $_smarty_tpl->tpl_vars['nombretema']->value;?>
+" method="post">
 		<p>Nuevo tema: <input type="text" name="nombretema"></p>
 		<p>Mensaje:</p>
 		<p><textarea rows="10" cols="100" name="mensajetema"></textarea></p>
+		<input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['idt']->value;?>
+" name="idtema" />
 		<p><input type="submit" value="Post"/></p>
 	</form>
 </div>
