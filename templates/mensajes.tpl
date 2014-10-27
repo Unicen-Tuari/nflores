@@ -21,7 +21,7 @@
 				</div>
 			</div>
 		</div>
-		<a href="index.php?action=foro&nombre=nada">Index</a>-> <a href="index.php?action=tema&nombre={$mensaje.temageneral}">{$mensaje.temageneral}</a>
+		<a href="index.php?action=foro">Index</a> -> <a href="index.php?action=tema&tipo={$temageneral}">{$temageneral}</a>
 		<script>
 			function mensajeajax(){
 					$.ajax({

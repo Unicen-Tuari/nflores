@@ -24,7 +24,6 @@ class Vista{
 		$this->smarty->assign('temas', $data);
 		$this->smarty->assign('nombretema', $nombre);
 		$this->smarty->assign('idt',$data[0]['idtema']);
-		var_dump($data);
 		$this->smarty->display('temas.tpl');
 	}
 	
@@ -32,7 +31,7 @@ class Vista{
 		$this->smarty->assign('mensajes', $data);
 		$this->smarty->assign('nombretema', $nombre);
 		$this->smarty->assign('idt',$data[0]['idtema']);
-		var_dump($data);
+		$this->smarty->assign('temageneral', $data[0]['temageneral']);
 		$this->smarty->display('mensajes.tpl');
 	}
 	

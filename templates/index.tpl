@@ -64,7 +64,7 @@
 							</div>
 						</div>
 					</div>
-				<a href="index.php?action=foro&nombre=nada"><p>Foro</p></a>
+				<a href="index.php?action=foro"><p>Foro</p></a>
 				</div>
 					<div class='col-lg-3 columna-derecha'>
 						<div class='col-lg-12 rotacion'>

@@ -11,9 +11,6 @@ class Controller
 	
 		//funcion para analisis general
 		public function Analizar($accion,$nombre){
-			if ($accion == 'foro'){
-				$this->view->mostrarforo();
-			};
 			if ($accion == 'tema'){
 				if ($nombre == 'partida'){
 					$consulta = "SELECT * FROM eventos WHERE tipo like '".$nombre."' ;";
@@ -31,7 +28,7 @@ class Controller
 				$data = $this->model->query($consulta);
 				$this->view->mostrarmensajes($data,$nombre);
 			}
-			if ($accion == 'creartema'){
+			/*if ($accion == 'creartema'){
 				$nombretema = $_POST['nombretema'];
 				$mensaje = $_POST ['mensajetema'];
 				$idtema = $_POST ['idtema'];
@@ -46,7 +43,7 @@ class Controller
 				);
 				echo jsonp_encode($r);
 				exit();
-			}
+			}*/
 		}
 }
 ?>

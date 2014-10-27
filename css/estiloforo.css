@@ -2,33 +2,42 @@ body{
 	background-color:#90EE90;
 }
 
+.indexprincipal{
+	position:fixed;
+	top: 2px;
+	left: 2px;
+}
 .imagenteam{
 	margin-top:10px;
 	margin-bottom:30px;
 }
 
 .seccion{
-	border:solid;
 	margin-top:10px;
 	margin-bottom:10px;
 }
-
+.tema{
+	background: linear-gradient(#003399,#009900);
+}
+.tema2{
+	background: linear-gradient(#009900, #003399);
+}
 .cabezera{
 	border-top-left-radius:2em;
 	border-top-right-radius:2em;
-	border:solid;
-	background: linear-gradient(top,tomato, #009900, #003399);
+	background: linear-gradient(#009900, #003399);
 }
-.cabezera p{
+.cabezera h4{
 	margin-left:15px;
+	margin-right:15px;
+	color: white;
+	border-bottom:solid 1px;
 }
 .iconomenu{
 	height:100px;
-	border:solid;
-	border-right: dotted 3px #000000;
+	border-right: solid 1px #FFFFFF;
 }
 
 .textomenu{
 	margin-top:30px;
-	border:solid;
 }

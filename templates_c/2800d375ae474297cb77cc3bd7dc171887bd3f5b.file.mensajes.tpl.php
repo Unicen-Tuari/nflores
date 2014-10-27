@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-10-22 22:20:41
+<?php /* Smarty version Smarty-3.1.19, created on 2014-10-27 14:11:13
          compiled from ".\templates\mensajes.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13256544508591198d5-56040169%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2800d375ae474297cb77cc3bd7dc171887bd3f5b' => 
     array (
       0 => '.\\templates\\mensajes.tpl',
-      1 => 1414009210,
+      1 => 1414414362,
       2 => 'file',
     ),
   ),
@@ -22,6 +22,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'nombretema' => 0,
     'mensajes' => 0,
     'mensaje' => 0,
+    'temageneral' => 0,
     'idt' => 0,
   ),
   'has_nocache_code' => false,
@@ -61,8 +62,8 @@ $_smarty_tpl->tpl_vars['mensaje']->_loop = true;
 				</div>
 			</div>
 		</div>
-		<a href="index.php?action=foro&nombre=nada">Index</a>-> <a href="index.php?action=tema&nombre=<?php echo $_smarty_tpl->tpl_vars['mensaje']->value['temageneral'];?>
-"><?php echo $_smarty_tpl->tpl_vars['mensaje']->value['temageneral'];?>
+		<a href="index.php?action=foro">Index</a> -> <a href="index.php?action=tema&tipo=<?php echo $_smarty_tpl->tpl_vars['temageneral']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['temageneral']->value;?>
 </a>
 		<script>
 			function mensajeajax(){

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-10-20 16:34:59
+<?php /* Smarty version Smarty-3.1.19, created on 2014-10-27 15:49:47
          compiled from ".\templates\indexforo.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:131965444339bb27b93-28941325%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5e3f11ef5dc40692b8a22b318d9073215e48f050' => 
     array (
       0 => '.\\templates\\indexforo.tpl',
-      1 => 1413815341,
+      1 => 1414421385,
       2 => 'file',
     ),
   ),
@@ -21,18 +21,28 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5444339bbc3fb5_93476722')) {function content_5444339bbc3fb5_93476722($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("headerforo.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>'foo'), 0);?>
 
-
+<div class="indexprincipal">
+	<a href="index.php?action=index">Pagina Principal</a>
+</div>
 		<div class="row menumensajes">
 			<div class="col-lg-12 seccion">
 				<div class="row cabezera">
-					<p>Sobre el Equipo</p>
+					<h4>Sobre el Equipo</h4>
 				</div>
 				<div class="row tema">
 					<div class="col-lg-2">
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
 					<div class="col-lg-8 textomenu">
-						<a href="index.php?action=tema&nombre=estrategias"><p>Estrategias</p></a>
+						<a href="index.php?action=tema&tipo=estrategias"><p>Estrategias</p></a>
+					</div>
+				</div>
+				<div class="row tema2">
+					<div class="col-lg-2">
+						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
+					</div>
+					<div class="col-lg-8 textomenu">
+						<a href="index.php?action=tema&tipo=items"><p>Items por campeon</p></a>
 					</div>
 				</div>
 				<div class="row tema">
@@ -40,57 +50,49 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
 					<div class="col-lg-8 textomenu">
-						<a href="index.php?action=tema&nombre=items"><p>Items por campeon</p></a>
-					</div>
-				</div>
-				<div class="row tema">
-					<div class="col-lg-2">
-						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
-					</div>
-					<div class="col-lg-8 textomenu">
-						<a href="index.php?action=tema&nombre=chat"><p>Chat</p></a>
+						<a href="index.php?action=tema&tipo=chat"><p>Chat</p></a>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-12 seccion">
 				<div class="row cabezera">
-					<p>Sobre el Juego</p>
+					<h4>Sobre el Juego</h4>
 				</div>
 				<div class="row tema">
 					<div class="col-lg-2">
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
 					<div class="col-lg-8 textomenu">
-						<a href="index.php?action=tema&nombre=campeones"><p>Leyendas/Campeones</p></a>
+						<a href="index.php?action=tema&tipo=campeones"><p>Leyendas/Campeones</p></a>
 					</div>
 				</div>
-				<div class="row tema">
+				<div class="row tema2">
 					<div class="col-lg-2">
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
 					<div class="col-lg-8 textomenu">
-						<a href="index.php?action=tema&nombre=bugs"><p>Bugs</p></a>
+						<a href="index.php?action=tema&tipo=bugs"><p>Bugs</p></a>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-12 seccion">
 				<div class="row cabezera">
-					<p>Eventos</p>
+					<h4>Eventos</h4>
 				</div>
 				<div class="row tema">
 					<div class="col-lg-2">
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
 					<div class="col-lg-8 textomenu">
-						 <a href="index.php?action=tema&nombre=partida"><p>Organizador de Partidas</p></a>
+						 <a href="index.php?action=tema&tipo=partida"><p>Organizador de Partidas</p></a>
 					</div>
 				</div>
-				<div class="row tema">
+				<div class="row tema2">
 					<div class="col-lg-2">
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
 					<div class="col-lg-8 textomenu">
-						<a href="index.php?action=tema&nombre=evento"><p>Eventos y Sorteos</p></a>
+						<a href="index.php?action=tema&tipo=evento"><p>Eventos y Sorteos</p></a>
 					</div>
 				</div>
 			</div>

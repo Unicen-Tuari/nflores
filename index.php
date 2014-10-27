@@ -14,7 +14,10 @@ $controller = new controller($model, $view);
 
 if(array_key_exists('action', $_REQUEST) && $_REQUEST['action']!=='index')
 {
-	$controller->Analizar($_REQUEST['action'],$_REQUEST['nombre']);
+	if(array_key_exists('tipo', $_REQUEST)){
+	$controller->Analizar($_REQUEST['action'],$_REQUEST['tipo']);
+	}
+	else {$view->mostrarforo();}
 }
 else {
 	$view->mostrarindex();
