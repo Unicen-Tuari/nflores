@@ -28,6 +28,11 @@ class Controller
 				$data = $this->model->query($consulta);
 				$this->view->mostrarmensajes($data,$nombre);
 			}
+			if ($accion == 'crearmensaje'){
+				//$insercion = "INSERT INTO mensajes() VALUES();";
+				$this->view->mostrarmensajes($data,$nombre);
+				echo "ENTRO";
+			}
 			/*if ($accion == 'creartema'){
 				$nombretema = $_POST['nombretema'];
 				$mensaje = $_POST ['mensajetema'];
@@ -37,11 +42,11 @@ class Controller
 				$this->model->insertar($sql);
 			}
 			
-			if ($accion == 'mensajeAjax'){
+			/*if ($accion == 'mensajeAjax'){
 				$r = array(
 					'codigoHTML' => '<h1>SALIO!!</h1>',
 				);
-				echo jsonp_encode($r);
+				echo json_encode($r);
 				exit();
 			}*/
 		}

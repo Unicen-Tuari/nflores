@@ -43,7 +43,7 @@
 			}
 		</script>
 		
-		<form action="index.php?action=ajaxmensaje&nombre=nada" method="POST">
+		<form action="index.php?action=ajaxmensaje method="POST">
 			<p>Mensaje:</p>
 			<p><textarea rows="10" cols="100" name="mensajem"></textarea></p>
 			<p><input type="submit" value="Post" onclick="mensajeajax()"/></p>
