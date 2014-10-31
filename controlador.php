@@ -8,7 +8,13 @@ class Controller
         $this->model = $model;
 		$this->view = $view;
     }
-	
+		public function Ajax($mensaje){
+			$r = array(
+				'codigoHTML' => $mensaje,
+			);
+			echo json_encode($r);
+			exit();
+		}
 		//funcion para analisis general
 		public function Analizar($accion,$nombre){
 			if ($accion == 'tema'){
@@ -36,14 +42,7 @@ class Controller
 				//$sql2= "INSERT INTO mensajes (mensaje,idusuario,idtema) VALUES (".$mensaje.",1,".$idtema.");";
 				$this->model->insertar($sql);
 			}
-			
-			if ($accion == 'mensajeAjax'){
-				$r = array(
-					'codigoHTML' => '<h1>SALIO!!</h1>',
-				);
-				echo jsonp_encode($r);
-				exit();
-			}*/
+			*/
 		}
 }
 ?>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-10-27 14:11:13
+<?php /* Smarty version Smarty-3.1.19, created on 2014-10-31 15:54:19
          compiled from ".\templates\mensajes.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13256544508591198d5-56040169%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2800d375ae474297cb77cc3bd7dc171887bd3f5b' => 
     array (
       0 => '.\\templates\\mensajes.tpl',
-      1 => 1414414362,
+      1 => 1414767030,
       2 => 'file',
     ),
   ),
@@ -32,9 +32,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 		<div class="row menumensajes">
 			<div class="col-lg-12 seccion">
-				<div class="row cabezera">
-					<p><?php echo $_smarty_tpl->tpl_vars['nombretema']->value;?>
-</p>
+				<div class="row cabezeramensaje">
+					<h4><?php echo $_smarty_tpl->tpl_vars['nombretema']->value;?>
+</h4>
 				</div>
 				<?php  $_smarty_tpl->tpl_vars['mensaje'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['mensaje']->_loop = false;
  $_smarty_tpl->tpl_vars['pid'] = new Smarty_Variable;
@@ -43,12 +43,11 @@ foreach ($_from as $_smarty_tpl->tpl_vars['mensaje']->key => $_smarty_tpl->tpl_v
 $_smarty_tpl->tpl_vars['mensaje']->_loop = true;
  $_smarty_tpl->tpl_vars['pid']->value = $_smarty_tpl->tpl_vars['mensaje']->key;
 ?>
-					<div class="row tema">
+					<div class="row temamensaje">
 						<div class="col-lg-2">
-							<img src="imagenes/<?php echo $_smarty_tpl->tpl_vars['mensaje']->value['avatar'];?>
-"/>
-							<?php echo $_smarty_tpl->tpl_vars['mensaje']->value['nombre'];?>
-
+							<img src="imagenes/Portada_perfil.png"/ class="fotoperfil">
+							<h5><?php echo $_smarty_tpl->tpl_vars['mensaje']->value['nombre'];?>
+</h5>
 						</div>
 						<div class="col-lg-8 textomenu" id="<?php echo $_smarty_tpl->tpl_vars['mensaje']->value['idmensaje'];?>
 ">
@@ -56,7 +55,6 @@ $_smarty_tpl->tpl_vars['mensaje']->_loop = true;
 
 						</div>
 					</div>
-					<hr>
 				<?php } ?>
 				<div id="huecoajax">
 				</div>
@@ -72,25 +70,21 @@ $_smarty_tpl->tpl_vars['mensaje']->_loop = true;
 					dataType: 'JSON',
 					type: "POST",
 					data: {	
-						action: 'mensajeAjax',
+						action: "mensajeAjax",
 						nombre: '<?php echo $_smarty_tpl->tpl_vars['idt']->value;?>
 ',
 					},
 					success: function(data) {
-						alert(XMLHttpRequest.responseText);
-						alert(textStatus);
-						alert(errorThrown);
 						$('#huecoajax').html(data.codigoHTML);
 					}
 					});
-					
 			}
 		</script>
 		
-		<form action="index.php?action=ajaxmensaje&nombre=nada" method="POST">
+		<form method="POST">
 			<p>Mensaje:</p>
 			<p><textarea rows="10" cols="100" name="mensajem"></textarea></p>
-			<p><input type="submit" value="Post" onclick="mensajeajax()"/></p>
+			<p><input type="button" value="Post" onclick="mensajeajax()"/></p>
 		</form>
 </div>	
 </body>

@@ -2,20 +2,19 @@
 
 		<div class="row menumensajes">
 			<div class="col-lg-12 seccion">
-				<div class="row cabezera">
-					<p>{$nombretema}</p>
+				<div class="row cabezeramensaje">
+					<h4>{$nombretema}</h4>
 				</div>
 				{foreach key=pid item=mensaje from=$mensajes}
-					<div class="row tema">
+					<div class="row temamensaje">
 						<div class="col-lg-2">
-							<img src="imagenes/{$mensaje.avatar}"/>
-							{$mensaje.nombre}
+							<img src="imagenes/Portada_perfil.png"/ class="fotoperfil">
+							<h5>{$mensaje.nombre}</h5>
 						</div>
 						<div class="col-lg-8 textomenu" id="{$mensaje.idmensaje}">
 							{$mensaje.mensaje}
 						</div>
 					</div>
-					<hr>
 				{/foreach}
 				<div id="huecoajax">
 				</div>
@@ -29,24 +28,20 @@
 					dataType: 'JSON',
 					type: "POST",
 					data: {	
-						action: 'mensajeAjax',
+						action: "mensajeAjax",
 						nombre: '{$idt}',
 					},
 					success: function(data) {
-						alert(XMLHttpRequest.responseText);
-						alert(textStatus);
-						alert(errorThrown);
 						$('#huecoajax').html(data.codigoHTML);
 					}
 					});
-					
 			}
 		</script>
 		
-		<form action="index.php?action=ajaxmensaje&nombre=nada" method="POST">
+		<form method="POST">
 			<p>Mensaje:</p>
-			<p><textarea rows="10" cols="100" name="mensajem"></textarea></p>
-			<p><input type="submit" value="Post" onclick="mensajeajax()"/></p>
+			<p><textarea rows="10" cols="100" name="mensaje"></textarea></p>
+			<p><input type="button" value="Post" onclick="mensajeajax()"/></p>
 		</form>
 </div>	
 </body>

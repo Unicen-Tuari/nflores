@@ -17,7 +17,12 @@ if(array_key_exists('action', $_REQUEST) && $_REQUEST['action']!=='index')
 	if(array_key_exists('tipo', $_REQUEST)){
 	$controller->Analizar($_REQUEST['action'],$_REQUEST['tipo']);
 	}
-	else {$view->mostrarforo();}
+	else {
+		if ($_REQUEST['action'] =='mensajeAjax'){
+			$controller->Ajax($_REQUEST['mensaje']);
+		}
+		else $view->mostrarforo();
+		}
 }
 else {
 	$view->mostrarindex();

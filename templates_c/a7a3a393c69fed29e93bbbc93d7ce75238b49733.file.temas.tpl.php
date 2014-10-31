@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-10-27 14:11:09
+<?php /* Smarty version Smarty-3.1.19, created on 2014-10-31 15:01:40
          compiled from ".\templates\temas.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:12823544426c83299a5-73836771%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a7a3a393c69fed29e93bbbc93d7ce75238b49733' => 
     array (
       0 => '.\\templates\\temas.tpl',
-      1 => 1414415459,
+      1 => 1414763776,
       2 => 'file',
     ),
   ),
@@ -32,8 +32,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <div class="row menumensajes">
 	<div class="col-lg-12 seccion">
 		<div class="row cabezera">
-			<p><?php echo $_smarty_tpl->tpl_vars['nombretema']->value;?>
-</p>
+			<h4><?php echo $_smarty_tpl->tpl_vars['nombretema']->value;?>
+</h4>
 		</div>
 		<?php  $_smarty_tpl->tpl_vars['tema'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['tema']->_loop = false;
  $_smarty_tpl->tpl_vars['pid'] = new Smarty_Variable;
@@ -48,8 +48,8 @@ $_smarty_tpl->tpl_vars['tema']->_loop = true;
 				</div>
 				<div class="col-lg-8 textomenu">
 					<a href="index.php?action=mensaje&tipo=<?php echo $_smarty_tpl->tpl_vars['tema']->value['nombretema'];?>
-"><p><?php echo $_smarty_tpl->tpl_vars['tema']->value['nombretema'];?>
-</p></a>
+"><h5><?php echo $_smarty_tpl->tpl_vars['tema']->value['nombretema'];?>
+</h5></a>
 				</div>
 			</div>
 		<?php } ?>
