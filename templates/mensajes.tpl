@@ -20,28 +20,11 @@
 				</div>
 			</div>
 		</div>
-		<a href="index.php?action=foro">Index</a> -> <a href="index.php?action=tema&tipo={$temageneral}">{$temageneral}</a>
-		<script>
-			function mensajeajax(){
-					$.ajax({
-					url: 'index.php',
-					dataType: 'JSON',
-					type: "POST",
-					data: {	
-						action: "mensajeAjax",
-						nombre: '{$idt}',
-					},
-					success: function(data) {
-						$('#huecoajax').html(data.codigoHTML);
-					}
-					});
-			}
-		</script>
-		
-		<form method="POST">
+		<a href="index.php?action=foro">Index</a> -> <a href="index.php?action=tema&tipo={$temageneral}">{$temageneral}</a>		
+		<form method="POST" href="index.php?action=insertar&tipo={$nombretema}">
 			<p>Mensaje:</p>
 			<p><textarea rows="10" cols="100" name="mensaje"></textarea></p>
-			<p><input type="button" value="Post" onclick="mensajeajax()"/></p>
+			<p><input type="submit" value="Post" onclick=""/></p>
 		</form>
 </div>	
 </body>

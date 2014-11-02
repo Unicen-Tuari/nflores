@@ -8,9 +8,13 @@ class Controller
         $this->model = $model;
 		$this->view = $view;
     }
+		public function insertar($mensaje,$tema){
+			
+		}
 		public function Ajax($mensaje){
+			//sacar fotoperfil con session
 			$r = array(
-				'codigoHTML' => $mensaje,
+				'codigoHTML' => '',
 			);
 			echo json_encode($r);
 			exit();
