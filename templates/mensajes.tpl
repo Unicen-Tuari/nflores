@@ -17,36 +17,13 @@
 					</div>
 					<hr>
 				{/foreach}
-				<div id="huecoajax">
-				</div>
 			</div>
 		</div>
-		<a href="index.php?action=foro">Index</a> -> <a href="index.php?action=tema&tipo={$temageneral}">{$temageneral}</a>
-		<script>
-			function mensajeajax(){
-					$.ajax({
-					url: 'index.php',
-					dataType: 'JSON',
-					type: "POST",
-					data: {	
-						action: 'mensajeAjax',
-						nombre: '{$idt}',
-					},
-					success: function(data) {
-						alert(XMLHttpRequest.responseText);
-						alert(textStatus);
-						alert(errorThrown);
-						$('#huecoajax').html(data.codigoHTML);
-					}
-					});
-					
-			}
-		</script>
-		
-		<form action="index.php?action=ajaxmensaje method="POST">
+		<a href="index.php?action=foro">Index</a> -> <a href="index.php?action=tema&tipo={$temageneral}">{$temageneral}</a>		
+		<form action="index.php?action=crear&tipo=mensaje&tema={$nombretema}" method="POST">
 			<p>Mensaje:</p>
-			<p><textarea rows="10" cols="100" name="mensajem"></textarea></p>
-			<p><input type="submit" value="Post" onclick="mensajeajax()"/></p>
+			<p><textarea rows="10" cols="100" name="mensajetema"></textarea></p>
+			<p><input type="submit" value="Post"/></p>
 		</form>
 </div>	
 </body>

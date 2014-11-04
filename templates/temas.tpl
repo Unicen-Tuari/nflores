@@ -18,7 +18,7 @@
 	</div>
 	<a href="index.php?action=foro">Index</a>
 	<br><br>
-	<form action="index.php?action=creartema&tipo={$nombretema}" method="post">
+	<form action="index.php?action=crear&tipo=tema" method="post">
 		<p>Nuevo tema: <input type="text" name="nombretema"></p>
 		<p>Mensaje:</p>
 		<p><textarea rows="10" cols="100" name="mensajetema"></textarea></p>

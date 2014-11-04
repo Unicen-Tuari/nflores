@@ -18,7 +18,24 @@
 		<div class="row cabezera">
 			<p>Informacion de la partida</p>
 		</div>
-		<div class="row infoeventoajax">
+		<script>
+			function mensajeajax(){
+					$.ajax({
+					url: 'index.php',
+					dataType: 'JSON',
+					type: "POST",
+					data: {	
+						action: 'infoAjax',
+						nombre: 'partidas',
+					},
+					success: function(data) {
+						$('#huecoajax').html(data.codigoHTML);
+					}
+					});
+					
+			}
+		</script>
+		<div class="row huecoajax">
 			
 		</div>
 	</div>

@@ -8,8 +8,31 @@ class Controller
         $this->model = $model;
 		$this->view = $view;
     }
-	
-		//funcion para analisis general
+		//SECCION PARA CREADO DE TEMAS Y MENSAJES
+		public function Crear(){
+			echo ($_POST['nombretema']);
+			echo ($_POST['mensajetema']);
+		}
+		
+		
+		
+		//SECCION PARA AJAX Y RELACIONADO
+		//MOSTRAR ALERT O MENSAJE CON AJAX CUANDO NO ESTA LOGEADO
+		//
+		public function Ajax(){
+			if ($accion == 'infoAjax'){
+					$r = array(
+						'codigoHTML' => '<h1>SALIO!!</h1>',
+					);
+					echo json_encode($r);
+					exit();
+			}
+		}
+		
+		
+		
+		//FUNCION PARA QUERYS/MOSTRADOS
+		
 		public function Analizar($accion,$nombre){
 			if ($accion == 'tema'){
 				if ($nombre == 'partida'){
@@ -28,11 +51,12 @@ class Controller
 				$data = $this->model->query($consulta);
 				$this->view->mostrarmensajes($data,$nombre);
 			}
-			if ($accion == 'crearmensaje'){
+			if(array_key_exists('tipo', $_REQUEST)){
 				//$insercion = "INSERT INTO mensajes() VALUES();";
 				$this->view->mostrarmensajes($data,$nombre);
 				echo "ENTRO";
 			}
+			
 			/*if ($accion == 'creartema'){
 				$nombretema = $_POST['nombretema'];
 				$mensaje = $_POST ['mensajetema'];
@@ -40,15 +64,9 @@ class Controller
 				$sql = "INSERT INTO temas (nombretema,idusuario,temageneral) VALUES (".$nombretema.",1,'".$nombre."');";
 				//$sql2= "INSERT INTO mensajes (mensaje,idusuario,idtema) VALUES (".$mensaje.",1,".$idtema.");";
 				$this->model->insertar($sql);
-			}
-			
-			/*if ($accion == 'mensajeAjax'){
-				$r = array(
-					'codigoHTML' => '<h1>SALIO!!</h1>',
-				);
-				echo json_encode($r);
-				exit();
 			}*/
+			
+			
 		}
 }
 ?>
