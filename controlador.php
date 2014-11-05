@@ -9,9 +9,18 @@ class Controller
 		$this->view = $view;
     }
 		//SECCION PARA CREADO DE TEMAS Y MENSAJES
-		public function Crear(){
+		public function Crear($tema){
 			echo ($_POST['nombretema']);
 			echo ($_POST['mensajetema']);
+			if ($tipo == 'mensaje'){
+			  $xsql="INSERT INTO mensajes(idtema,mensaje,idusuario) VALUES("","","","")";
+			  $this->model->insertar($xsql);
+			  $xsql="SELECT * FROM mensajes m,temas t,usuario u WHERE (nombretema like '".$tema."') AND (m.idtema = t.idtema) ;";
+			  $this->view->mostrarmensajes($this->model->query($xsql));
+			}
+			if ($tipo == 'tema'){
+			  $xsql="";
+			}
 		}
 		
 		
