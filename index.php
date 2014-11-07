@@ -5,6 +5,7 @@ ini_set("display_errors",1);
 
 require('libs/Smarty.class.php');	
 session_start();
+$_SESSION['idusuario'] = 'nahuel';
 
 include_once 'modelodb.php';
 include_once 'vistas.php';
@@ -13,12 +14,12 @@ $model = new ModeloDB();
 $view = new Vista();
 $controller = new controller($model, $view);
 
+//SI FUNCIONA COLOCAR ANTES LLAMAR AL CREADO DE COSAS O VISTA DE PARTIDAS, ETC
+//if((!isset($_SESSION['user']) && ($_REQUEST['action']!=='index')) $view->mostrarforo()
+
+
 if(array_key_exists('action', $_REQUEST) && $_REQUEST['action']!=='index')
 {
-	if(!isset($_SESSION['user'])){
-		$views->cargausuario();
-	}
-	else{
 		if(array_key_exists('tipo', $_REQUEST)){
 		$controller->Analizar($_REQUEST['action'],$_REQUEST['tipo']);
 		}
@@ -34,6 +35,13 @@ if(array_key_exists('action', $_REQUEST) && $_REQUEST['action']!=='index')
 				else $view->mostrarforo();
 			}
 		}
+	if(array_key_exists('action', $_REQUEST) && $_REQUEST['action'] == 'crear'){
+		$controller->Crear($_REQUEST['tema']);
+		//echo $_REQUEST['tema'];
+	}
+	//
+	if(array_key_exists('action', $_REQUEST) && $_REQUEST['action']== 'infoAjax'){
+		$controller->Ajax();
 	}
 }
 else {

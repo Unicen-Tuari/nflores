@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-10-31 15:54:19
+<?php /* Smarty version Smarty-3.1.19, created on 2014-11-07 14:28:48
          compiled from ".\templates\mensajes.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13256544508591198d5-56040169%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2800d375ae474297cb77cc3bd7dc171887bd3f5b' => 
     array (
       0 => '.\\templates\\mensajes.tpl',
-      1 => 1414767030,
+      1 => 1415364107,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'mensajes' => 0,
     'mensaje' => 0,
     'temageneral' => 0,
-    'idt' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -56,35 +55,16 @@ $_smarty_tpl->tpl_vars['mensaje']->_loop = true;
 						</div>
 					</div>
 				<?php } ?>
-				<div id="huecoajax">
-				</div>
 			</div>
 		</div>
 		<a href="index.php?action=foro">Index</a> -> <a href="index.php?action=tema&tipo=<?php echo $_smarty_tpl->tpl_vars['temageneral']->value;?>
 "><?php echo $_smarty_tpl->tpl_vars['temageneral']->value;?>
 </a>
-		<script>
-			function mensajeajax(){
-					$.ajax({
-					url: 'index.php',
-					dataType: 'JSON',
-					type: "POST",
-					data: {	
-						action: "mensajeAjax",
-						nombre: '<?php echo $_smarty_tpl->tpl_vars['idt']->value;?>
-',
-					},
-					success: function(data) {
-						$('#huecoajax').html(data.codigoHTML);
-					}
-					});
-			}
-		</script>
-		
-		<form method="POST">
+		<form action="index.php?action=crear&tipo=mensaje&tema=<?php echo $_smarty_tpl->tpl_vars['nombretema']->value;?>
+" method="POST">
 			<p>Mensaje:</p>
-			<p><textarea rows="10" cols="100" name="mensajem"></textarea></p>
-			<p><input type="button" value="Post" onclick="mensajeajax()"/></p>
+			<p><textarea rows="10" cols="100" name="mensajetema"></textarea></p>
+			<p><input type="submit" value="Post"/></p>
 		</form>
 </div>	
 </body>

@@ -16,15 +16,13 @@
 						</div>
 					</div>
 				{/foreach}
-				<div id="huecoajax">
-				</div>
 			</div>
 		</div>
-		<a href="index.php?action=foro">Index</a> -> <a href="index.php?action=tema&tipo={$temageneral}">{$temageneral}</a>		
-		<form method="POST" href="index.php?action=insertar&tipo={$nombretema}">
+		<a href="index.php?action=foro">Index</a> -> <a href="index.php?action=tema&tipo={$temageneral}">{$temageneral}</a>
+		<form action="index.php?action=crear&tipo=mensaje&tema={$nombretema}" method="POST">
 			<p>Mensaje:</p>
-			<p><textarea rows="10" cols="100" name="mensaje"></textarea></p>
-			<p><input type="submit" value="Post" onclick=""/></p>
+			<p><textarea rows="10" cols="100" name="mensajetema"></textarea></p>
+			<p><input type="submit" value="Post"/></p>
 		</form>
 </div>	
 </body>

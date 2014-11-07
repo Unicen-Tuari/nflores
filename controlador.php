@@ -8,18 +8,41 @@ class Controller
         $this->model = $model;
 		$this->view = $view;
     }
-		public function insertar($mensaje,$tema){
-			
+	
+		//SECCION PARA CREADO DE TEMAS Y MENSAJES
+		public function Crear($tema){
+			echo ($tema);
+			echo ($_POST['mensajetema']);
+			//SEPRAR PARA TEMAS Y MENSAJES
+			if ($_REQUEST['tipo'] == 'mensaje'){
+			  $xsql="INSERT INTO mensajes(idtema,mensaje,idusuario) VALUES(".$tema.",".$_REQUEST['mensajetema'].",".$_SESSION['idusuario'].");";
+			  //$this->model->insertar($xsql);
+			  //
+			  echo $xsql;
+			  $xsql="SELECT * FROM mensajes m,temas t,usuario u WHERE (nombretema like '".$tema."') AND (m.idtema = t.idtema) ;";
+			  //$this->view->mostrarmensajes($this->model->query($xsql));
+			  //
+			  echo $xsql;
+			}
 		}
-		public function Ajax($mensaje){
-			//sacar fotoperfil con session
+		
+		
+		
+		//SECCION PARA AJAX Y RELACIONADO
+		//MOSTRAR ALERT O MENSAJE CON AJAX CUANDO NO ESTA LOGEADO
+		//
+		public function Ajax(){
 			$r = array(
-				'codigoHTML' => '',
+				'codigoHTML' => '<h1>SALIO!!</h1>',
 			);
 			echo json_encode($r);
-			exit();
+			exit();			
 		}
-		//funcion para analisis general
+		
+		
+		
+		//FUNCION PARA QUERYS/MOSTRADOS
+		
 		public function Analizar($accion,$nombre){
 			if ($accion == 'tema'){
 				if ($nombre == 'partida'){
@@ -38,15 +61,6 @@ class Controller
 				$data = $this->model->query($consulta);
 				$this->view->mostrarmensajes($data,$nombre);
 			}
-			/*if ($accion == 'creartema'){
-				$nombretema = $_POST['nombretema'];
-				$mensaje = $_POST ['mensajetema'];
-				$idtema = $_POST ['idtema'];
-				$sql = "INSERT INTO temas (nombretema,idusuario,temageneral) VALUES (".$nombretema.",1,'".$nombre."');";
-				//$sql2= "INSERT INTO mensajes (mensaje,idusuario,idtema) VALUES (".$mensaje.",1,".$idtema.");";
-				$this->model->insertar($sql);
-			}
-			*/
 		}
 }
 ?>

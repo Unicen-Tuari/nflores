@@ -25,23 +25,6 @@
 		
 		</div>
 	</div>
-	<script>
-		function mensajeajax(msg){
-				$.ajax({
-				url: 'index.php',
-				dataType: 'JSON',
-				type: "POST",
-				data: {	
-					action: "mensajeAjax",
-					nombre: '{$idt}',
-					mensaje: msg,
-				},
-				success: function(data) {
-					$('#huecoajax').html(data.codigoHTML);
-				}
-				});
-		}
-	</script>
 	{foreach key=pid item=partida from=$evento}
 		<div class="row">
 			
@@ -52,9 +35,10 @@
 			<h4>Informacion de la partida</h4>
 		</div>
 		<div class="row ajaxpartidas">
-			<div id="huecoajax">
+			<div class="row huecoajax">
 			</div>
 		</div>
+		
 	</div>
 </div>
 </div>
