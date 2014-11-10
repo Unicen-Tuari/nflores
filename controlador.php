@@ -11,18 +11,30 @@ class Controller
 	
 		//SECCION PARA CREADO DE TEMAS Y MENSAJES
 		public function Crear($tema){
-			echo ($tema);
-			echo ($_POST['mensajetema']);
-			//SEPRAR PARA TEMAS Y MENSAJES
+		
 			if ($_REQUEST['tipo'] == 'mensaje'){
-			  $xsql="INSERT INTO mensajes(idtema,mensaje,idusuario) VALUES(".$tema.",".$_REQUEST['mensajetema'].",".$_SESSION['idusuario'].");";
-			  //$this->model->insertar($xsql);
-			  //
-			  echo $xsql;
-			  $xsql="SELECT * FROM mensajes m,temas t,usuario u WHERE (nombretema like '".$tema."') AND (m.idtema = t.idtema) ;";
-			  //$this->view->mostrarmensajes($this->model->query($xsql));
-			  //
-			  echo $xsql;
+				$consulta = "SELECT idtema FROM temas WHERE nombretema = '".$tema."' ;";
+				$data = $this->model->query($consulta);
+				$xsql="INSERT INTO mensajes(idtema,mensaje,idusuario) VALUES(".$data[0]['idtema'].",'".$_REQUEST['mensajetema']."',".$_SESSION['idusuario'].");";
+				$this->model->insertar($xsql);
+				//echo $xsql;
+			  
+				$xsql="SELECT * FROM mensajes m,temas t,usuario u WHERE (nombretema = '".$tema."') AND (m.idtema = t.idtema) ;";
+				$xdato = $this->model->query($xsql);
+				$this->view->mostrarmensajes($xdato,$tema);
+			}
+			else
+			{
+				echo $_REQUEST['idtema'];
+				echo $_REQUEST['nombretema'];
+				echo $_REQUEST['mensajetema'];
+				echo $_REQUEST['tema'];
+				/*$xsqltema="INSERT INTO temas(nombretema,idusuario,temageneral) VALUES('".$_REQUEST['nombretema']."',".$_SESSION['idusuario'].",'".$_REQUEST['tema']."');";
+				$xsqlmensaje="INSERT INTO mensajes(idtema,mensaje,idusuario) VALUES(".$tema.",".$_REQUEST['mensajetema'].",".$_SESSION['idusuario'].");";
+				$this->model->insertar($xsql);
+			  
+				$xsql="SELECT * FROM mensajes m,temas t,usuario u WHERE (nombretema like '".$tema."') AND (m.idtema = t.idtema) ;";
+				$this->view->mostrarmensajes($this->model->query($xsql));*/
 			}
 		}
 		

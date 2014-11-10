@@ -44,7 +44,7 @@ class ModeloDB{
 		
 	}
 	
-	public function insertarsql($sql){
+	public function insertar($sql){
 			$this->conn = $this->conectar();
 			$insercion=$this->conn->prepare($sql);
 			$insercion->execute();
