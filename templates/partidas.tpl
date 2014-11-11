@@ -1,12 +1,12 @@
 {include file="headerforo.tpl" title=foo}
 <script>
-	function mensajeajax(msg){
+	function llamadoajax(msg){
 			$.ajax({
 			url: 'index.php',
 			dataType: 'JSON',
 			type: "POST",
 			data: {	
-				action: "mensajeAjax",
+				action: "infoAjax",
 				nombre: '{$idt}',
 				mensaje: msg,
 			},
