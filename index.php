@@ -5,7 +5,6 @@ ini_set("display_errors",1);
 
 require('libs/Smarty.class.php');	
 session_start();
-$_SESSION['idusuario'] = 'nahuel';
 
 include_once 'modelodb.php';
 include_once 'vistas.php';

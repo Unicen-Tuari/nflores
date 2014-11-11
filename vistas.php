@@ -31,6 +31,14 @@ class Vista{
 		$this->smarty->assign('mensajes', $data);
 		$this->smarty->assign('nombretema', $nombre);
 		$this->smarty->assign('idt',$data[0]['idtema']);
+		if (!isset($_SESSION['user'])
+		{
+			$this->smarty->assign('user', 'x');
+		}
+		else
+		{
+			$this->smarty->assign('user', $_SESSION['idusuario']);
+		}
 		$this->smarty->assign('temageneral', $data[0]['temageneral']);
 		$this->smarty->display('mensajes.tpl');
 	}

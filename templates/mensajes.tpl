@@ -15,6 +15,7 @@
 							{$mensaje.mensaje}
 						</div>
 					</div>
+					{if $user neq "x"} welcome Sir.
 				{/foreach}
 			</div>
 		</div>
