@@ -1,4 +1,6 @@
 {include file="headerforo.tpl" title=foo}
+
+<button type="button" class="login"><span data-toggle="modal" data-target="#modallogin"></span></button>
 <div class="indexprincipal">
 	<a href="index.php?action=index">Pagina Principal</a>
 </div>
@@ -76,6 +78,25 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="modal fade" id="modallogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog"> <!--TAMAÑO DEL MODAL-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">Login/Registrarse</h4>
+					</div>
+					<div class="modal-body">
+						Nombre: <input type="text" name="nombrecuenta"><br>
+						PassWord: <input type="PassWord" name="password"><br>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default">Login</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					</div>
+				</div>
+			</div>
+        </div>
   </body>
   
 {include file="footer.tpl"}

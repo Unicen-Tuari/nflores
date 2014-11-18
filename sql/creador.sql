@@ -5,8 +5,12 @@ CREATE TABLE Usuario
 	Avatar varchar (30) not null default 'imagenes/iconobronce.png',
 	edad int (2) not null,
 	nacion varchar (15) not null,
+	rango boolean DEFAULT false; --FALSE ES USUARIO, TRUE ES ADMIN
 	CONSTRAINT PK_usuario primary key (idusuario)
 );
+
+--ALTER TABLE Usuario ADD rango boolean DEFAULT false;
+
 CREATE TABLE Temas
 (
 	idtema int (10) not null AUTO_INCREMENT,
@@ -32,8 +36,9 @@ CREATE TABLE eventos
 	idusuario int (20) not null,
 	idevento int (20) not null,
 	comentarios	varchar(200) not null,
-	Nombre varchar (20) not null,
+	Nombrepartida varchar (20) not null,
 	Tipo varchar (20) not null,
+	Lista varchar (100) not null,
 	Password character (20) not null,
 	CONSTRAINT PK_eventos primary key (idevento),
 	CONSTRAINT FK_eventos2 FOREIGN KEY (idusuario) REFERENCES Usuario(idusuario)
