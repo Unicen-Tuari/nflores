@@ -19,24 +19,22 @@ class Controller
 				$this->model->insertar($xsql);
 				//echo $xsql;
 			  
-				$xsql="SELECT * FROM mensajes m,temas t,usuario u WHERE (nombretema = '".$tema."') AND (m.idtema = t.idtema) ;";
+				$xsql="SELECT * FROM mensajes m,temas t,usuario u WHERE (t.nombretema = '".$tema."') AND (m.idtema = t.idtema) ;";
 				$xdato = $this->model->query($xsql);
 				$this->view->mostrarmensajes($xdato,$tema);
 			}
 			else
-			{/*
+			{
 				echo $_REQUEST['idtema'];
 				echo $_REQUEST['nombretema'];
 				echo $_REQUEST['mensajetema'];
-				echo $_REQUEST['tema'];*/
-				$xsqltema="INSERT INTO temas(nombretema,idusuario,temageneral) VALUES('".$_REQUEST['nombretema']."',".$_SESSION['idusuario'].",'".$_REQUEST['tema']."');";
-				$xidtc = "SELECT idtema FROM temas WHERE nombretema = '".$_REQUEST['nombretema']."'";
-				$data = $this->model->query($xidtc);
-				$xsqlmensaje="INSERT INTO mensajes(idtema,mensaje,idusuario) VALUES(".$data[0]['idtema'].",".$_REQUEST['mensajetema'].",".$_SESSION['idusuario'].");";
-				$this->model->insertar($xsqltema);
+				echo $_REQUEST['tema'];
+				/*$xsqltema="INSERT INTO temas(nombretema,idusuario,temageneral) VALUES('".$_REQUEST['nombretema']."',".$_SESSION['idusuario'].",'".$_REQUEST['tema']."');";
+				$xsqlmensaje="INSERT INTO mensajes(idtema,mensaje,idusuario) VALUES(".$tema.",".$_REQUEST['mensajetema'].",".$_SESSION['idusuario'].");";
+				$this->model->insertar($xsql);
 			  
-				$xsql="SELECT * FROM mensajes m,temas t,usuario u WHERE (nombretema like '".$$_REQUEST['nombretema']."') AND (m.idtema = t.idtema) ;";
-				$this->view->mostrarmensajes($this->model->query($xsql));
+				$xsql="SELECT * FROM mensajes m,temas t,usuario u WHERE (nombretema like '".$tema."') AND (m.idtema = t.idtema) ;";
+				$this->view->mostrarmensajes($this->model->query($xsql));*/
 			}
 		}
 		
@@ -46,11 +44,44 @@ class Controller
 		//MOSTRAR ALERT O MENSAJE CON AJAX CUANDO NO ESTA LOGEADO
 		//
 		public function Ajax(){
-			$xsql = "SELECT  Nombre,comentarios,tipo FROM EVENTOS WHERE idevento = ".$_REQUEST['idevento']." ;";
-			$dato = $this->model->query($xsql);
-			$r = array(
-				'codigoHTML' => "<p>$dato[0]['comentarios']</p><p>$dato[0]['Nombre']</p><p>$dato[0]['Tipo']</p>",
-			);
+			
+			//LOGIN AJAX
+			if (isset($_REQUEST['usuario'])){
+				$xsql = "SELECT * FROM Usuario U WHERE U.nombre = '".$_REQUEST['usuario']."' "; // AND U.password = '".$_REQUEST['contraseña']."'";
+				$data = $this->model->query($xsql);
+				
+				
+				//$r = array(
+				//	'codigoHTML' => '<h1>SALIO!!</h1>',
+				//);
+				
+				//$this->view->mostrarindex();
+				if ($data != null)
+				{
+					$r = array('mensaje' => 'exito');
+					$_SESSION['user'] = 'user';
+				}
+				else
+				{
+					$r = array('mensaje' => 'vacio');
+					$_SESSION['user'] = 'free';
+				}
+			}
+			else
+			{
+				//AJAX PARA MOSTRAR INFO PARTIDAS
+				if (isset($_REQUEST['ide']))
+				{
+					$xsql = "SELECT * FROM eventos e WHERE e.idevento = '".$_REQUEST['ide']."'";
+					$data = $this->model->query($xsql);
+					
+					$texto = "<img src='imagenes/".$data[0]['TIPO']."png class='imagenpartida' />";
+					
+					
+					$r = array('info' => $texto);
+					echo $texto;
+				}
+			}
 			echo json_encode($r);
 			exit();			
 		}
@@ -60,10 +91,12 @@ class Controller
 		//FUNCION PARA QUERYS/MOSTRADOS
 		
 		public function Analizar($accion,$nombre){
-			if ($accion == 'tema'){
+			if ($accion == 'tema')
+			{
 				if ($nombre == 'partida'){
-					$consulta = "SELECT * FROM eventos WHERE tipo like '".$nombre."' ;";
+					$consulta = "SELECT * FROM eventos e, usuario u WHERE e.idusuario = u.idusuario";
 					$data = $this->model->query($consulta);
+					//print_r($data);
 					$this->view->mostrareventos($data);
 				}
 				else{
@@ -72,6 +105,7 @@ class Controller
 					$this->view->mostrartemas($data,$nombre);
 				}
 			}
+			
 			if ($accion == 'mensaje'){
 				$consulta = "SELECT * FROM mensajes m,temas t,usuario u WHERE (nombretema like '".$nombre."') AND (m.idtema = t.idtema) ;";
 				$data = $this->model->query($consulta);

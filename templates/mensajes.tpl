@@ -12,13 +12,10 @@
 							<h5>{$mensaje.nombre}</h5>
 						</div>
 						<div class="col-lg-8 textomenu" id="{$mensaje.idmensaje}">
-							{if $mensaje.admin eq true}
-								<div></div>
-							{/if}
 							{$mensaje.mensaje}
+							
 						</div>
 					</div>
-					{if $user neq "x"} welcome Sir.
 				{/foreach}
 			</div>
 		</div>

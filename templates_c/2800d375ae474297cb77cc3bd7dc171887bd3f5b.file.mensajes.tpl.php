@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-11-07 14:28:48
+<?php /* Smarty version Smarty-3.1.19, created on 2014-11-23 00:04:35
          compiled from ".\templates\mensajes.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13256544508591198d5-56040169%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2800d375ae474297cb77cc3bd7dc171887bd3f5b' => 
     array (
       0 => '.\\templates\\mensajes.tpl',
-      1 => 1415364107,
+      1 => 1416697463,
       2 => 'file',
     ),
   ),
@@ -52,6 +52,7 @@ $_smarty_tpl->tpl_vars['mensaje']->_loop = true;
 ">
 							<?php echo $_smarty_tpl->tpl_vars['mensaje']->value['mensaje'];?>
 
+							
 						</div>
 					</div>
 				<?php } ?>

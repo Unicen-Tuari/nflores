@@ -2,6 +2,7 @@ CREATE TABLE Usuario
 (
 	idusuario int (20) not null,
 	nombre varchar (20) not null,
+	password varchar (20) not null,
 	Avatar varchar (30) not null default 'imagenes/iconobronce.png',
 	edad int (2) not null,
 	nacion varchar (15) not null,
@@ -35,10 +36,10 @@ CREATE TABLE eventos
 (
 	idusuario int (20) not null,
 	idevento int (20) not null,
-	comentarios	varchar(200) not null,
+	comentarios	varchar(200),
 	Nombrepartida varchar (20) not null,
 	Tipo varchar (20) not null,
-	Lista varchar (100) not null,
+	Lista varchar (100),
 	Password character (20) not null,
 	CONSTRAINT PK_eventos primary key (idevento),
 	CONSTRAINT FK_eventos2 FOREIGN KEY (idusuario) REFERENCES Usuario(idusuario)

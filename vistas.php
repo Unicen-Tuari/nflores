@@ -12,11 +12,13 @@ class Vista{
 	}
 	
 	public function mostrarforo(){
+		$this->smarty->assign('user',$_SESSION['user']);
 		$this->smarty->display('indexforo.tpl');		
 	}
 	
 	public function mostrareventos($data){
 		$this->smarty->assign('evento', $data);
+		$this->smarty->assign('foto','imagenes/'.$data[0]['Avatar']);
 		$this->smarty->display('partidas.tpl');
 	}
 	
@@ -29,16 +31,9 @@ class Vista{
 	
 	public function mostrarmensajes($data,$nombre){
 		$this->smarty->assign('mensajes', $data);
-		$this->smarty->assign('nombretema', $nombre);
+		$this->smarty->assign('nombretema', $data[0]['nombretema']);
+		$this->smarty->assign('user', $data[0]['nombre']);
 		$this->smarty->assign('idt',$data[0]['idtema']);
-		if (!isset($_SESSION['user'])
-		{
-			$this->smarty->assign('user', 'x');
-		}
-		else
-		{
-			$this->smarty->assign('user', $_SESSION['idusuario']);
-		}
 		$this->smarty->assign('temageneral', $data[0]['temageneral']);
 		$this->smarty->display('mensajes.tpl');
 	}

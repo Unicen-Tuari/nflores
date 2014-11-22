@@ -14,51 +14,44 @@ $view = new Vista();
 $controller = new controller($model, $view);
 
 
-if((!isset($_SESSION['user'])) && ($_REQUEST['action']!=='index'))
+if(!isset($_SESSION['user'])) $_SESSION['user'] = 'free';
+
+if(array_key_exists('action', $_REQUEST) && ($_REQUEST['action']=='loginAjax' or $_REQUEST['action']=='infoAjax'))
 {
+	$controller->Ajax();
+}
+/*{
 	$xsql="SELECT * FROM Usuario";
 	$dato=$model->query($xsql);
 	print_r($dato);
 	$_SESSION['idusuario']=$dato[0]['idusuario'];
 	$_SESSION['nombre']=$dato[0]['nombre'];
 	$_SESSION['avatar']=$dato[0]['Avatar'];
-	$_SESSION['edad']=$dato[0]['edad'];
+	$_SESSION['edad|']=$dato[0]['edad'];
 	$_SESSION['nacion']=$dato[0]['Nacion'];
-}
-
+}*/
 
 if(array_key_exists('action', $_REQUEST) && $_REQUEST['action']!=='index')
 {
-	if(array_key_exists('tipo', $_REQUEST))
+	if ($_SESSION['user'] != 'free')
 	{
-		if($_REQUEST['action'] == 'crear')
+		if(array_key_exists('tipo', $_REQUEST))
 		{
-			$controller->Crear($_REQUEST['tema']);
-			//echo $_REQUEST['tema'];
-		}
-		$controller->Analizar($_REQUEST['action'],$_REQUEST['tipo']);
-		}
-	else {
-		if ($_REQUEST['action'] =='mensajeAjax'){
-			//SEPARAR AJAX EN ARCHIVO APARTE YA QUE NO SIEMPRE ENTRAR A PARTIDAS
-			$controller->Ajax();
-		}
-		else {
-			//tipo = tema a donde insertar
-			if ($_REQUEST['action'] =='insertar'){
-				$controller->insertar($_REQUEST['mensaje'],$_REQUEST['tipo']);
+			if($_REQUEST['action'] == 'crear')
+			{
+				$controller->Crear($_REQUEST['tema']);
 			}
-			else $view->mostrarforo();
+			else
+			{
+				$controller->Analizar($_REQUEST['action'],$_REQUEST['tipo']);
+			}
 		}
+		else $view->mostrarforo();
 	}
 	else $view->mostrarforo();
-	
-	//
-	if(array_key_exists('action', $_REQUEST) && $_REQUEST['action']== 'infoAjax'){
-		$controller->Ajax();
-	}
 }
-else {
+else 
+{
 	$view->mostrarindex();
 }
 

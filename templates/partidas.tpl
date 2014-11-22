@@ -1,16 +1,18 @@
 {include file="headerforo.tpl" title=foo}
+
 <script>
-	function llamadoajax(idE){
+	function partidaajax(ide){
+			alert('ajaxpartida');
 			$.ajax({
 			url: 'index.php',
 			dataType: 'JSON',
 			type: "POST",
 			data: {	
 				action: "infoAjax",
-				idevento: idE,
+				idevento: ide,
 			},
 			success: function(data) {
-				$('#huecoajax').html(data.codigoHTML);
+				$('#huecoajax').html(data.info);
 			}
 			});
 	}
@@ -20,27 +22,29 @@
 		<div class="row cabezera">
 			<h4>Partidas</h4>
 		</div>
-		<div class="row partidascss">
+		<div class="row ubicacion">
 			{foreach key=pid item=partida from=$evento}
+				<span onclick="partidaajax({$evento.0.idevento})">
 				<div class="row">
-				<span onclick="llamadoajax({$evento.idevento})"><img class="imagenpartida"/><h7>ID:{$evento.idevento} Nombre:{$evento.Nombrepartida} Tipo:{$evento.Tipo}<span>
-			
+					<img src="{$foto}" class="fotopartida"/>
+					{$evento.0.Nombrepartida}
+					{$evento.0.idusuario}
 				</div>
+				</span>
 			{/foreach}
 		</div>
 	</div>
-	
 	<div class="col-lg-8 seccion">
-		<div class="row cabezera">
+		<div class="row cabezera" id="infopartida">
 			<h4>Informacion de la partida</h4>
 		</div>
-		<div class="row ajaxpartidas">
-			<div class="row huecoajax">
-			</div>
+		<div class="row huecoajax">
 		</div>
 		
 	</div>
+	
 </div>
+<a href="index.php?action=foro">Index</a>
 </div>
 </body>
 

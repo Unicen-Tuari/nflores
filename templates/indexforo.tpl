@@ -1,9 +1,12 @@
 {include file="headerforo.tpl" title=foo}
-
-<button type="button" class="login"><span data-toggle="modal" data-target="#modallogin"></span></button>
 <div class="indexprincipal">
 	<a href="index.php?action=index">Pagina Principal</a>
 </div>
+{if $user eq 'free'}
+<span data-toggle="modal" data-target="#modallogin"><button class="login">Login</button></span>
+{else}
+<span data-toggle="modal" data-target="#modallogin"><button class="login">USUARIO</button></span>
+{/if}
 		<div class="row menumensajes">
 			<div class="col-lg-12 seccion">
 				<div class="row cabezera">
@@ -79,19 +82,20 @@
 		</div>
 	</div>
 	
-	<div class="modal fade" id="modallogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modallogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">	
 			<div class="modal-dialog"> <!--TAMAÑO DEL MODAL-->
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title" id="myModalLabel">Login/Registrarse</h4>
+						<h5 class="modal-title" id="myModalLabel">Login/Registrarse</h5>
 					</div>
-					<div class="modal-body">
-						Nombre: <input type="text" name="nombrecuenta"><br>
-						PassWord: <input type="PassWord" name="password"><br>
+					<div class="modal-body " id="modal-body">
+						<p>Usuario: <input type="text" name="usuario" id="usuario" class="flotarderecha"><br></p>
+						<p>Contraseña: <input type="PassWord" name="password" id="contrasena" class="flotarderecha"><br></p>
 					</div>
+					<div id="responseajaxlogin"></div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default">Login</button>
+						<button type="button" class="btn btn-default" onclick="login()">Login</button>
 						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 					</div>
 				</div>

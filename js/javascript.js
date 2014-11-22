@@ -7,3 +7,27 @@ $(".rotacion").mousemove(function (event){
 $(".rotacion").mouseout(function (event){
 	$("#siguelo").css("opacity","0");
 });
+
+
+function login(){
+			var user = document.getElementById('usuario').value;
+			var password = document.getElementById('contrasena').value;
+			//alert("login js para ajax");
+			$.ajax({
+			url: 'index.php',
+			dataType: 'JSON',
+			type: "POST",
+			data: {	
+				action: "loginAjax",
+				usuario: user,
+				contraseña: password,
+			},
+			success: function(data) {
+				$('#responseajaxlogin').html(data.mensaje);
+				alert(data.mensaje);
+			}
+			});
+			
+			
+			
+	}
