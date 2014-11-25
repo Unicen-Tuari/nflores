@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-10-27 14:45:50
+<?php /* Smarty version Smarty-3.1.19, created on 2014-11-23 22:10:06
          compiled from ".\templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3236854443399585c95-55822848%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6bb57af55f93ce168fc4df5c1a1e76f895cd2653' => 
     array (
       0 => '.\\templates\\index.tpl',
-      1 => 1414417530,
+      1 => 1416776995,
       2 => 'file',
     ),
   ),
@@ -17,13 +17,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.19',
   'unifunc' => 'content_5444339968f6d4_33321550',
+  'variables' => 
+  array (
+    'rotacion' => 0,
+    'rota' => 0,
+  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5444339968f6d4_33321550')) {function content_5444339968f6d4_33321550($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>'foo'), 0);?>
 
 <body>
+<img class="fondo" src="imagenes/fondo1.jpg"/>
 <div class="container">
-		<div class="row fondonegro ">
+		<div class="row colorfondo ">
 			<div class="col-lg-12">
 				<ul class="list-inline top">
 					<li><a href="#"><img src="imagenes/twiter.png" class="img-rounded"/></a></li>
@@ -38,8 +44,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<img src="imagenes/Portada_main2.png" class="img-responsive img-rounded imagenteam"/>
 			</div>
 		</div>
-		<div class="row"> <!--CUERPO CON INFO-->
-			<div class="col-lg-12 menu-principal fondonegro">
+		
+		<div class="row "> <!--CUERPO CON INFO-->
+			<div class=" col-lg-12 menu-principal">
 				<div class="col-lg-9 columna-izquierda"> <!--COLUMNA IZQUIERDA-->
 					<!--CAROUSEL-->
 					<div class="row" id="carousel">
@@ -86,25 +93,41 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 							</div>
 						</div>
 					</div>
-				<a href="index.php?action=foro"><p>Foro</p></a>
-				</div>
-					<div class='col-lg-3 columna-derecha'>
-						<div class='col-lg-12 rotacion'>
-							<div class='header'>
-								<p>Rotacion Semanal</p>
-								<ul class="list-inline lista-rotacion">
-									<li><img src="imagenes/ahrirotacion.png" class='img-resposive img-rotacion'/></li>
-									<li><img src="imagenes/ahrirotacion.png" class='img-resposive img-rotacion'/></li>
-									<li><img src="imagenes/ahrirotacion.png" class='img-resposive img-rotacion'/></li>
-									<li><img src="imagenes/ahrirotacion.png" class='img-resposive img-rotacion'/></li>
-								</ul>
-							</div>
-						</div>
-						
-						
+				<div class="row columnasinfo">
+					<div class="col-lg-3 colorfondo bloqinfo">
+						<img src="imagenes/iconoschamp.png" class="imginfo"><br>
+						<p>¿Interesado en nuestro Equipo?, Enterate sobre nosotros, el juego y MÁS en nuestro <a href="index.php?action=foro">Foro</a></p>
 					</div>
+					<div class="col-lg-3 colorfondo bloqinfo">
+						<img src="imagenes/lolcs.png" class="imginfo"><br>
+						<p>Que recuerdos dejo el último Mundial, opina e infórmate de más en el <a href="index.php?action=foro">Foro</a></p>
+					</div>
+					
+				</div>
+				</div>
+				<div class='col-lg-3 columna-derecha'>
+					<div class='col-lg-12 rotacion colorfondo'>
+						<div class='header'>
+							<p class="titulo">Rotacion Semanal</p>
+							<ul class="list-inline lista-rotacion">
+								<?php  $_smarty_tpl->tpl_vars['rota'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rota']->_loop = false;
+ $_smarty_tpl->tpl_vars['pid'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['rotacion']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['rota']->key => $_smarty_tpl->tpl_vars['rota']->value) {
+$_smarty_tpl->tpl_vars['rota']->_loop = true;
+ $_smarty_tpl->tpl_vars['pid']->value = $_smarty_tpl->tpl_vars['rota']->key;
+?>
+									<li><img src="imagenes/<?php echo $_smarty_tpl->tpl_vars['rota']->value['Imagen'];?>
+.png" class="img-resposive img-rotacion"/></li>
+								<?php } ?>
+							</ul>
+						</div>
+					</div>					
+				</div>
 			</div>
 		</div>
+	
+	
 </div>
 </body>
 <?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>

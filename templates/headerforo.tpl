@@ -25,3 +25,4 @@
 			</div>
 		</div>
 		<img src="imagenes/Portada_main2.png" class="img-responsive imagenteam"/>
+		<img src="imagenes/fondoforo.jpg" class="fondo"/>

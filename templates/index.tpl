@@ -1,7 +1,8 @@
 {include file="header.tpl" title=foo}
 <body>
+<img class="fondo" src="imagenes/fondo1.jpg"/>
 <div class="container">
-		<div class="row fondonegro ">
+		<div class="row colorfondo ">
 			<div class="col-lg-12">
 				<ul class="list-inline top">
 					<li><a href="#"><img src="imagenes/twiter.png" class="img-rounded"/></a></li>
@@ -16,8 +17,9 @@
 				<img src="imagenes/Portada_main2.png" class="img-responsive img-rounded imagenteam"/>
 			</div>
 		</div>
-		<div class="row"> <!--CUERPO CON INFO-->
-			<div class="col-lg-12 menu-principal fondonegro">
+		
+		<div class="row "> <!--CUERPO CON INFO-->
+			<div class=" col-lg-12 menu-principal">
 				<div class="col-lg-9 columna-izquierda"> <!--COLUMNA IZQUIERDA-->
 					<!--CAROUSEL-->
 					<div class="row" id="carousel">
@@ -64,25 +66,34 @@
 							</div>
 						</div>
 					</div>
-				<a href="index.php?action=foro"><p>Foro</p></a>
-				</div>
-					<div class='col-lg-3 columna-derecha'>
-						<div class='col-lg-12 rotacion'>
-							<div class='header'>
-								<p>Rotacion Semanal</p>
-								<ul class="list-inline lista-rotacion">
-									<li><img src="imagenes/ahrirotacion.png" class='img-resposive img-rotacion'/></li>
-									<li><img src="imagenes/ahrirotacion.png" class='img-resposive img-rotacion'/></li>
-									<li><img src="imagenes/ahrirotacion.png" class='img-resposive img-rotacion'/></li>
-									<li><img src="imagenes/ahrirotacion.png" class='img-resposive img-rotacion'/></li>
-								</ul>
-							</div>
-						</div>
-						
-						
+				<div class="row columnasinfo">
+					<div class="col-lg-3 colorfondo bloqinfo">
+						<img src="imagenes/iconoschamp.png" class="imginfo"><br>
+						<p>¿Interesado en nuestro Equipo?, Enterate sobre nosotros, el juego y MÁS en nuestro <a href="index.php?action=foro">Foro</a></p>
 					</div>
+					<div class="col-lg-3 colorfondo bloqinfo">
+						<img src="imagenes/lolcs.png" class="imginfo"><br>
+						<p>Que recuerdos dejo el último Mundial, opina e infórmate de más en el <a href="index.php?action=foro">Foro</a></p>
+					</div>
+					
+				</div>
+				</div>
+				<div class='col-lg-3 columna-derecha'>
+					<div class='col-lg-12 rotacion colorfondo'>
+						<div class='header'>
+							<p class="titulo">Rotacion Semanal</p>
+							<ul class="list-inline lista-rotacion">
+								{foreach key=pid item=rota from=$rotacion}
+									<li><img src="imagenes/{$rota.Imagen}.png" class="img-resposive img-rotacion"/></li>
+								{/foreach}
+							</ul>
+						</div>
+					</div>					
+				</div>
 			</div>
 		</div>
+	
+	
 </div>
 </body>
 {include file="footer.tpl"}

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-11-23 00:08:18
+<?php /* Smarty version Smarty-3.1.19, created on 2014-11-25 23:42:56
          compiled from ".\templates\partidas.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3110554451a8aab1ce0-64150169%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2954ae408ed80bfb821b75ba1cc737d3eb25a28e' => 
     array (
       0 => '.\\templates\\partidas.tpl',
-      1 => 1416697668,
+      1 => 1416955374,
       2 => 'file',
     ),
   ),
@@ -29,7 +29,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <script>
 	function partidaajax(ide){
-			alert('ajaxpartida');
 			$.ajax({
 			url: 'index.php',
 			dataType: 'JSON',
@@ -39,7 +38,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				idevento: ide,
 			},
 			success: function(data) {
-				$('#huecoajax').html(data.info);
+				$('#comentJ').innerhtml(data.info);
+				$('#passJ').html(data.pass);
+				$('#nombreJ').html(data.creador);
+				$('#listaJ').html(data.cola);
 			}
 			});
 	}
@@ -62,9 +64,8 @@ $_smarty_tpl->tpl_vars['partida']->_loop = true;
 				<div class="row">
 					<img src="<?php echo $_smarty_tpl->tpl_vars['foto']->value;?>
 " class="fotopartida"/>
-					<?php echo $_smarty_tpl->tpl_vars['evento']->value[0]['Nombrepartida'];?>
-
-					<?php echo $_smarty_tpl->tpl_vars['evento']->value[0]['idusuario'];?>
+					Nombre: <?php echo $_smarty_tpl->tpl_vars['evento']->value[0]['Nombrepartida'];?>
+/<?php echo $_smarty_tpl->tpl_vars['evento']->value[0]['Tipo'];?>
 
 				</div>
 				</span>
@@ -75,12 +76,16 @@ $_smarty_tpl->tpl_vars['partida']->_loop = true;
 		<div class="row cabezera" id="infopartida">
 			<h4>Informacion de la partida</h4>
 		</div>
-		<div class="row huecoajax">
-		</div>
-		
-	</div>
-	
+		<div class="row" id="partida">
+			<div id="nombreJ"></div>
+			<div id="passJ"></div>
+			<div id="listaJ"></div>
+			<div id="comentJ"></div>
+		</div>		
+	</div>	
 </div>
+<br>
+<br>
 <a href="index.php?action=foro">Index</a>
 </div>
 </body>

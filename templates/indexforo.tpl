@@ -2,17 +2,13 @@
 <div class="indexprincipal">
 	<a href="index.php?action=index">Pagina Principal</a>
 </div>
-{if $user eq 'free'}
 <span data-toggle="modal" data-target="#modallogin"><button class="login">Login</button></span>
-{else}
-<span data-toggle="modal" data-target="#modallogin"><button class="login">USUARIO</button></span>
-{/if}
 		<div class="row menumensajes">
 			<div class="col-lg-12 seccion">
 				<div class="row cabezera">
 					<h4>Sobre el Equipo</h4>
 				</div>
-				<div class="row tema">
+				<div class="row colorfondo">
 					<div class="col-lg-2">
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
@@ -20,7 +16,7 @@
 						<a href="index.php?action=tema&tipo=estrategias"><p>Estrategias</p></a>
 					</div>
 				</div>
-				<div class="row tema2">
+				<div class="row colorfondo">
 					<div class="col-lg-2">
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
@@ -28,7 +24,7 @@
 						<a href="index.php?action=tema&tipo=items"><p>Items por campeon</p></a>
 					</div>
 				</div>
-				<div class="row tema">
+				<div class="row colorfondo">
 					<div class="col-lg-2">
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
@@ -41,7 +37,7 @@
 				<div class="row cabezera">
 					<h4>Sobre el Juego</h4>
 				</div>
-				<div class="row tema">
+				<div class="row colorfondo">
 					<div class="col-lg-2">
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
@@ -49,7 +45,7 @@
 						<a href="index.php?action=tema&tipo=campeones"><p>Leyendas/Campeones</p></a>
 					</div>
 				</div>
-				<div class="row tema2">
+				<div class="row colorfondo">
 					<div class="col-lg-2">
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
@@ -62,7 +58,7 @@
 				<div class="row cabezera">
 					<h4>Eventos</h4>
 				</div>
-				<div class="row tema">
+				<div class="row colorfondo">
 					<div class="col-lg-2">
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
@@ -70,7 +66,7 @@
 						 <a href="index.php?action=tema&tipo=partida"><p>Organizador de Partidas</p></a>
 					</div>
 				</div>
-				<div class="row tema2">
+				<div class="row colorfondo">
 					<div class="col-lg-2">
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>

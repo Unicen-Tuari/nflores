@@ -2,7 +2,6 @@
 
 <script>
 	function partidaajax(ide){
-			alert('ajaxpartida');
 			$.ajax({
 			url: 'index.php',
 			dataType: 'JSON',
@@ -12,7 +11,10 @@
 				idevento: ide,
 			},
 			success: function(data) {
-				$('#huecoajax').html(data.info);
+				$('#comentJ').innerhtml(data.info);
+				$('#passJ').html(data.pass);
+				$('#nombreJ').html(data.creador);
+				$('#listaJ').html(data.cola);
 			}
 			});
 	}
@@ -27,8 +29,7 @@
 				<span onclick="partidaajax({$evento.0.idevento})">
 				<div class="row">
 					<img src="{$foto}" class="fotopartida"/>
-					{$evento.0.Nombrepartida}
-					{$evento.0.idusuario}
+					Nombre: {$evento.0.Nombrepartida}/{$evento.0.Tipo}
 				</div>
 				</span>
 			{/foreach}
@@ -38,12 +39,16 @@
 		<div class="row cabezera" id="infopartida">
 			<h4>Informacion de la partida</h4>
 		</div>
-		<div class="row huecoajax">
-		</div>
-		
-	</div>
-	
+		<div class="row" id="partida">
+			<div id="nombreJ"></div>
+			<div id="passJ"></div>
+			<div id="listaJ"></div>
+			<div id="comentJ"></div>
+		</div>		
+	</div>	
 </div>
+<br>
+<br>
 <a href="index.php?action=foro">Index</a>
 </div>
 </body>

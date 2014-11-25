@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-10-20 00:04:40
+<?php /* Smarty version Smarty-3.1.19, created on 2014-11-24 14:00:57
          compiled from ".\templates\headerforo.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1540544426c8396fc6-78011737%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '35555d6f23521618100d3d9a3672c4100acca836' => 
     array (
       0 => '.\\templates\\headerforo.tpl',
-      1 => 1413756264,
+      1 => 1416834047,
       2 => 'file',
     ),
   ),
@@ -45,4 +45,5 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				</ul>
 			</div>
 		</div>
-		<img src="imagenes/Portada_main2.png" class="img-responsive imagenteam"/><?php }} ?>
+		<img src="imagenes/Portada_main2.png" class="img-responsive imagenteam"/>
+		<img src="imagenes/fondoforo.jpg" class="fondo"/><?php }} ?>

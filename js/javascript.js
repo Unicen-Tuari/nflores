@@ -12,7 +12,6 @@ $(".rotacion").mouseout(function (event){
 function login(){
 			var user = document.getElementById('usuario').value;
 			var password = document.getElementById('contrasena').value;
-			//alert("login js para ajax");
 			$.ajax({
 			url: 'index.php',
 			dataType: 'JSON',
@@ -24,10 +23,20 @@ function login(){
 			},
 			success: function(data) {
 				$('#responseajaxlogin').html(data.mensaje);
-				alert(data.mensaje);
 			}
 			});
 			
 			
 			
-	}
+}
+
+function logout(){
+	$.ajax({
+			url: 'index.php',
+			dataType: 'JSON',
+			type: "POST",
+			data: {	
+				action: "logout"
+			}
+			});
+}

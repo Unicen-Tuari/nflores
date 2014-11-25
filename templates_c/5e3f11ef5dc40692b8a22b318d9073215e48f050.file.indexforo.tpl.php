@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-11-22 20:41:44
+<?php /* Smarty version Smarty-3.1.19, created on 2014-11-24 20:26:49
          compiled from ".\templates\indexforo.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:131965444339bb27b93-28941325%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5e3f11ef5dc40692b8a22b318d9073215e48f050' => 
     array (
       0 => '.\\templates\\indexforo.tpl',
-      1 => 1416685301,
+      1 => 1416857207,
       2 => 'file',
     ),
   ),
@@ -17,10 +17,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.19',
   'unifunc' => 'content_5444339bbc3fb5_93476722',
-  'variables' => 
-  array (
-    'user' => 0,
-  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5444339bbc3fb5_93476722')) {function content_5444339bbc3fb5_93476722($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("headerforo.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>'foo'), 0);?>
@@ -28,17 +24,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <div class="indexprincipal">
 	<a href="index.php?action=index">Pagina Principal</a>
 </div>
-<?php if ($_smarty_tpl->tpl_vars['user']->value=='free') {?>
 <span data-toggle="modal" data-target="#modallogin"><button class="login">Login</button></span>
-<?php } else { ?>
-<span data-toggle="modal" data-target="#modallogin"><button class="login">USUARIO</button></span>
-<?php }?>
 		<div class="row menumensajes">
 			<div class="col-lg-12 seccion">
 				<div class="row cabezera">
 					<h4>Sobre el Equipo</h4>
 				</div>
-				<div class="row tema">
+				<div class="row colorfondo">
 					<div class="col-lg-2">
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
@@ -46,7 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						<a href="index.php?action=tema&tipo=estrategias"><p>Estrategias</p></a>
 					</div>
 				</div>
-				<div class="row tema2">
+				<div class="row colorfondo">
 					<div class="col-lg-2">
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
@@ -54,7 +46,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						<a href="index.php?action=tema&tipo=items"><p>Items por campeon</p></a>
 					</div>
 				</div>
-				<div class="row tema">
+				<div class="row colorfondo">
 					<div class="col-lg-2">
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
@@ -67,7 +59,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<div class="row cabezera">
 					<h4>Sobre el Juego</h4>
 				</div>
-				<div class="row tema">
+				<div class="row colorfondo">
 					<div class="col-lg-2">
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
@@ -75,7 +67,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						<a href="index.php?action=tema&tipo=campeones"><p>Leyendas/Campeones</p></a>
 					</div>
 				</div>
-				<div class="row tema2">
+				<div class="row colorfondo">
 					<div class="col-lg-2">
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
@@ -88,7 +80,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<div class="row cabezera">
 					<h4>Eventos</h4>
 				</div>
-				<div class="row tema">
+				<div class="row colorfondo">
 					<div class="col-lg-2">
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>
@@ -96,7 +88,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 						 <a href="index.php?action=tema&tipo=partida"><p>Organizador de Partidas</p></a>
 					</div>
 				</div>
-				<div class="row tema2">
+				<div class="row colorfondo">
 					<div class="col-lg-2">
 						<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 					</div>

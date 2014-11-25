@@ -13,46 +13,37 @@ $model = new ModeloDB();
 $view = new Vista();
 $controller = new controller($model, $view);
 
-
-if(!isset($_SESSION['user'])) $_SESSION['user'] = 'free';
-
+print_r($_SESSION);
 if(array_key_exists('action', $_REQUEST) && ($_REQUEST['action']=='loginAjax' or $_REQUEST['action']=='infoAjax'))
 {
 	$controller->Ajax();
 }
-/*{
-	$xsql="SELECT * FROM Usuario";
-	$dato=$model->query($xsql);
-	print_r($dato);
-	$_SESSION['idusuario']=$dato[0]['idusuario'];
-	$_SESSION['nombre']=$dato[0]['nombre'];
-	$_SESSION['avatar']=$dato[0]['Avatar'];
-	$_SESSION['edad|']=$dato[0]['edad'];
-	$_SESSION['nacion']=$dato[0]['Nacion'];
-}*/
+if(array_key_exists('action', $_REQUEST) && $_REQUEST['action']=='logout')
+{
+	unset($_SESSION['idusuario']);
+	$view->mostrarforo();
+}
 
 if(array_key_exists('action', $_REQUEST) && $_REQUEST['action']!=='index')
 {
-	if ($_SESSION['user'] != 'free')
+	if (isset($_SESSION['idusuario']))
 	{
-		if(array_key_exists('tipo', $_REQUEST))
-		{
-			if($_REQUEST['action'] == 'crear')
-			{
-				$controller->Crear($_REQUEST['tema']);
-			}
-			else
-			{
-				$controller->Analizar($_REQUEST['action'],$_REQUEST['tipo']);
-			}
-		}
-		else $view->mostrarforo();
+				
+			if($_REQUEST['action'] == 'crear') $controller->Crear($_REQUEST['tema']);
+			
+			if($_REQUEST['action'] == 'foro') $view->mostrarforo();
+			
+			if(isset($_REQUEST['tipo'])) $controller->Analizar($_REQUEST['action'],$_REQUEST['tipo']);
+			
+			
 	}
 	else $view->mostrarforo();
 }
 else 
 {
-	$view->mostrarindex();
+	$xsql = "SELECT * FROM Rotacion R WHERE R.rotacion = 1";
+	$data = $model->query($xsql);
+	$view->mostrarindex($data);
 }
 
 

@@ -3,14 +3,14 @@ CREATE TABLE Usuario
 	idusuario int (20) not null,
 	nombre varchar (20) not null,
 	password varchar (20) not null,
-	Avatar varchar (30) not null default 'imagenes/iconobronce.png',
+	Avatar varchar (30) not null default 'iconobronce',
 	edad int (2) not null,
 	nacion varchar (15) not null,
+	Email varchar (20) not null,
 	rango boolean DEFAULT false; --FALSE ES USUARIO, TRUE ES ADMIN
 	CONSTRAINT PK_usuario primary key (idusuario)
 );
 
---ALTER TABLE Usuario ADD rango boolean DEFAULT false;
 
 CREATE TABLE Temas
 (
@@ -45,8 +45,29 @@ CREATE TABLE eventos
 	CONSTRAINT FK_eventos2 FOREIGN KEY (idusuario) REFERENCES Usuario(idusuario)
 );
 
+CREATE TABLE Rotacion
+(
+	Nombre varchar(20) not null,
+	Imagen varchar (50) not null,
+	rotacion boolean default false,
+	CONSTRAINT PK_Rotacion primary key (Nombre)
+);
+
+
+--INSERCION MENSAJE,TEMA Y USUARIO
+INSERT INTO Usuario (idusuario,nombre,edad,nacion) VALUES (1,'nahuel',23,'ARG');
+INSERT INTO Temas (idtema,nombretema,idusuario,temageneral) VALUES (1,'estrategias',1,'temasgenerales');
 INSERT INTO Mensajes (idmensaje,mensaje,idtema, idusuario)
 VALUES (1,'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedan',1,1);
 
-INSERT INTO Usuario (idusuario,nombre,edad,nacion) VALUES (1,'nahuel',23,'ARG');
-INSERT INTO Temas (idtema,nombretema,idusuario,temageneral) VALUES (1,'estrategias',1,'temasgenerales');
+
+
+
+--INSERCION DE ROTACION
+Insert into Rotacion (Nombre,Imagen,rotacion) VALUES ('Ahri','ahrirotacion',true);
+Insert into Rotacion (Nombre,Imagen,rotacion) VALUES ('Akali','akalirotacion',true);
+Insert into Rotacion (Nombre,Imagen,rotacion) VALUES ('Alistar','alistarrotacion',true);
+Insert into Rotacion (Nombre,Imagen,rotacion) VALUES ('Galio','galiorotacion',true);
+Insert into Rotacion (Nombre,Imagen,rotacion) VALUES ('Ezreal','ezrealrotacion',true);
+Insert into Rotacion (Nombre,Imagen,rotacion) VALUES ('FiddelStick','fiddelstickrotacionrotacion',true);
+

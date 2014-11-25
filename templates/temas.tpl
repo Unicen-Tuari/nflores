@@ -1,12 +1,12 @@
 {include file="headerforo.tpl" title=foo}
-
+<button class="login" onclick="logout()">Logout</button>
 <div class="row menumensajes">
 	<div class="col-lg-12 seccion">
 		<div class="row cabezera">
 			<h4>{$nombretema}</h4>
 		</div>
 		{foreach key=pid item=tema from=$temas}
-			<div class="row tema">
+			<div class="row colorfondo">
 				<div class="col-lg-2">
 					<img src="imagenes/iconobronce.png" class="img-responsive iconomenu" />
 				</div>
@@ -16,15 +16,10 @@
 			</div>
 		{/foreach}
 	</div>
-	<a href="index.php?action=foro">Index</a>
-	<br><br>
-	<form action="index.php?action=crear&tipo=tema&tema={$nombretema}" method="post">
-		<p>Nuevo tema: <input type="text" name="nombretema"></p>
-		<p>Mensaje:</p>
-		<p><textarea rows="10" cols="100" name="mensajetema"></textarea></p>
-		<input type="hidden" value="{$idt}" name="idtema" />
-		<p><input type="submit" value="Post"/></p>
-	</form>
+	<a href="index.php?action=nuevo&tipo=tema&tg={$nombretema}"><button>Nuevo Tema</button></a>
+	<br>
+	<br>
+	<a href="index.php?action=foro" id="pathway">Index</a>
 </div>
 </div>
 </body>
