@@ -48,6 +48,18 @@
 	</div>	
 </div>
 <br>
+<form action="index.php?action=crear&tipo=partida" method="post" class="colorfondo">
+		<p>Crea tu partida!</p>
+		<p>Nombre Partida:<br> <input type="text" name="nombrepartida"></p>
+		<p>Tipo: 
+		<input type="radio" name="group1" value="5v5" checked> 5v5
+		<input type="radio" name="group1" value="3v3"> 3v3</p>
+		<p>Password: <input type="text" name="pass"></p>
+		<p>Comentarios:</p>
+		<p><textarea rows="3" cols="20" name="coments"></textarea></p>
+		<p><input type="submit" value="Post"/></p>
+	</form>
+<br>
 <br>
 <a href="index.php?action=foro">Index</a>
 </div>

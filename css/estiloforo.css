@@ -1,3 +1,21 @@
+.borrar{
+	position:absolute;
+	top: 5px;
+	right: 5px;
+	height:30px;
+	width:30px;
+	border-radius: 6px;
+}
+
+.editar{
+	position:absolute;
+	top: 5px;
+	right: 40px;
+	height:30px;
+	width:30px;
+	border-radius: 6px;
+}
+
 form{
 	padding: 20px;
 }

@@ -42,6 +42,19 @@ class Controller
 				
 				$this->view->mostrartemas($data,$tema);
 			}
+			
+			if ($_REQUEST['tipo'] == 'partida')
+			{
+				$xsql = "INSERT INTO eventos(idusuario,comentarios,Nombrepartida,Tipo,Password) VALUES (".$_SESSION['idusuario'].",'".$_REQUEST['coments']."','".$_REQUEST['nombrepartida']."','".$_REQUEST['group1']."',".$_REQUEST['pass'].")"
+				
+				$this->model->insertar($xsql);
+				
+				$consulta = "SELECT u.idusuario, e.Nombrepartida, e.Tipo, e.Password,e.idevento ,u.nombre, u.Avatar FROM eventos e, usuario u WHERE e.idusuario = u.idusuario";
+				$data = $this->model->query($consulta);
+				$this->view->mostrareventos($data);
+			}
+			
+			
 		}
 		
 		
@@ -106,7 +119,6 @@ class Controller
 				if ($nombre == 'partida'){
 					$consulta = "SELECT u.idusuario, e.Nombrepartida, e.Tipo, e.Password,e.idevento ,u.nombre, u.Avatar FROM eventos e, usuario u WHERE e.idusuario = u.idusuario";
 					$data = $this->model->query($consulta);
-					//print_r($data);
 					$this->view->mostrareventos($data);
 				}
 				else{
@@ -118,13 +130,15 @@ class Controller
 			
 			if ($accion == 'mensaje'){
 				$consulta = "SELECT * FROM mensajes m,temas t,usuario u WHERE nombretema = '".$nombre."' AND m.idtema = t.idtema ";
+				$xsql = "SELECT  idusuario FROM Usuario WHERE idusuario = ".$_SESSION['idusuario']." ;";
 				$data = $this->model->query($consulta);
-				echo($consulta);
-				$this->view->mostrarmensajes($data,$nombre);
+				$data2 = $this->model->query($xsql);
+				$this->view->mostrarmensajes($data,$nombre,$data2);
 			}
 			
 			if ($accion == 'nuevo')
 			{
+				
 				$this->view->mostrarnuevoX();
 			}
 		}

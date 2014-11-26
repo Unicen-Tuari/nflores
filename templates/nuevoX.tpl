@@ -11,6 +11,5 @@
 	</form>
 	<a href="index.php?action=foro">Index</a><span id="separador">-></span><a href="index.php?action=tema&tipo={$temageneral}">{$temageneral}</a>
 	
-	
 </body>
 {include file="footer.tpl"}

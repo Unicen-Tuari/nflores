@@ -35,7 +35,7 @@ CREATE TABLE Mensajes
 CREATE TABLE eventos
 (
 	idusuario int (20) not null,
-	idevento int (20) not null,
+	idevento int NOT NULL AUTO_INCREMENT,
 	comentarios	varchar(200),
 	Nombrepartida varchar (20) not null,
 	Tipo varchar (20) not null,

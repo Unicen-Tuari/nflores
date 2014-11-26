@@ -11,7 +11,11 @@
 							<img src="imagenes/Portada_perfil.png"/ class="fotoperfil">
 							<h5>{$mensaje.nombre}</h5>
 						</div>
-						<div class="col-lg-8 textomenu" id="{$mensaje.idmensaje}">
+						<div class="col-lg-8 textomenu">
+							{if $idu eq $mensaje.idusuario}
+								<a href="index.php?action=borrar&tipo=mensaje$id={$mensaje.idmensaje}"><img src="botoncerrar.jpg" class="borrar"/></a>
+								<a href="index.php?action=editar&tipo=mensaje$id={$mensaje.idmensaje}"><img src="botoneditar.png" class="editar"/></a>
+							{/if}
 							{$mensaje.mensaje}
 						</div>
 					</div>
