@@ -1,12 +1,15 @@
 <?php
 
-class ModeloDB{
+abstract class ModeloDB{
 	
 	private $user = 'root';
-	private $pass = '';
+	private $pass = 'mysqlpass';
 	private $host = 'localhost';
-	private $db = 'web2';
+	private $db = '';
 	protected $conn = null;
+	
+	protected abstract function carga();//????
+	
 	
 	protected function conectar(){
 		$conn = null;
@@ -20,6 +23,7 @@ class ModeloDB{
 		catch(PDOException $pe){
 			die('Error de conexion, Mensaje: ' .$pe->getMessage());
 		}
+		$this->conn = $conn;
 		return $conn;
 	}
 
@@ -32,27 +36,23 @@ class ModeloDB{
 	
 	
 	public function query($sql){
-		$this->conn = $this->conectar();		
-		$resultado = $this->conn->prepare($sql);
-		
-		$resultado->execute();
-		if(!$resultado){
-			die(print($this->conn->errorInfo()));
-		}
-		$data=$resultado->fetchAll(PDO::FETCH_ASSOC);
-		return $data;
-		
-	}
-	
-	public function insertar($sql){
-			$this->conn = $this->conectar();
-			$insercion=$this->conn->prepare($sql);
-			$insercion->execute();
-			if(!$insercion){
-			die(print($this->conn->errorInfo()));
+		$conn = $this->coneccion();
+		try{
+			$resultado = $conn->prepare($sql);
+			$resultado->execute();
+			if(!$resultado){
+				die(print($conn->errorInfo()));
 			}
+			$data=$resultado->fetchAll(PDO::FETCH_ASSOC);
+			
+			return $data;
+		}
+		catch (Exeption $e){
+			
+		}
 	}
 	 
 	
 }
+
 ?>
