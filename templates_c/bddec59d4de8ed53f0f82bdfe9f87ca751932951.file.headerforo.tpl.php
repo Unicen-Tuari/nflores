@@ -1,4 +1,25 @@
-<!Doctype HTML>
+<?php /* Smarty version Smarty-3.1.19, created on 2015-09-15 18:35:50
+         compiled from ".\templates\headerforo.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:385755f88e35da9c51-70125444%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'bddec59d4de8ed53f0f82bdfe9f87ca751932951' => 
+    array (
+      0 => '.\\templates\\headerforo.tpl',
+      1 => 1442352751,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '385755f88e35da9c51-70125444',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_55f88e35da9c50_54072276',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_55f88e35da9c50_54072276')) {function content_55f88e35da9c50_54072276($_smarty_tpl) {?><!Doctype HTML>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -24,4 +45,4 @@
 				</ul>
 			</div>
 		</div>
-		<img src="imagenes/Portada_main2.png" class="img-responsive imagenteam"/>
+		<img src="imagenes/Portada_main2.png" class="img-responsive imagenteam"/><?php }} ?>

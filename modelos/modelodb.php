@@ -1,6 +1,6 @@
 <?php
 
-abstract class ModeloDB{
+class ModeloDB{
 	
 	private $user = 'root';
 	private $pass = 'mysqlpass';
@@ -8,7 +8,7 @@ abstract class ModeloDB{
 	private $db = '';
 	protected $conn = null;
 	
-	protected abstract function carga();//????
+	//protected abstract function carga();//????
 	
 	
 	protected function conectar(){

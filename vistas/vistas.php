@@ -8,11 +8,11 @@ class Vista{
 	
 	public function __construct(){
 		$this->smarty = new Smarty;
-		$smarty->debugging = true;
+		$this->smarty->debugging = true;
 	}
 	
 	function mostrarhome(){
-		$this->smarty->display('indexforo.tpl')
+		$this->smarty->display('indexforo.tpl');
 	}
 
 	function mostrartemas($temas){

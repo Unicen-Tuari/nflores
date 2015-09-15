@@ -1,4 +1,26 @@
-{include file="headerforo.tpl" title=foo}
+<?php /* Smarty version Smarty-3.1.19, created on 2015-09-15 19:19:52
+         compiled from ".\templates\indexforo.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:1311255f88e35b4f0c5-37806529%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'a272699913e5ef2b57f31f492229a441197897d3' => 
+    array (
+      0 => '.\\templates\\indexforo.tpl',
+      1 => 1442355589,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1311255f88e35b4f0c5-37806529',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_55f88e35d3b258_42079286',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_55f88e35d3b258_42079286')) {function content_55f88e35d3b258_42079286($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("headerforo.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>'foo'), 0);?>
+
 	<div id="huecologin">
 		<a onclick="login()">Login</a>
 	</div>
@@ -228,4 +250,6 @@
   </body>
   
 
-{include file="footerforo.tpl"}
+<?php echo $_smarty_tpl->getSubTemplate ("footerforo.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+<?php }} ?>
