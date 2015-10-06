@@ -1,35 +1,80 @@
-/*
-$(".rotacion").mousemove(function (event){
-	$("#siguelo").css("left",event.clientX+10);
-	$("#siguelo").css("top",event.clientY+5);
-	$("#siguelo").css("opacity","1");
-});
-				
-$(".rotacion").mouseout(function (event){
-	$("#siguelo").css("opacity","0");
-});
+function backlogin(){
+	$('#huecologin').html('<a onclick="login()">Login</a>')
+}
 
-*/
 
+
+
+function vernoticias($categoria){
+	$.ajax({
+		url: 'index.php',
+		dataType: 'HTML',
+		type: "POST",
+		data: {
+			action: "infocat",
+			idcategoria: $categoria,
+		},
+		success: function(data) {
+			$('#huecobody').html(data);
+		},
+		error: function(data){
+			alert(data);
+		}
+	});
+}
+
+
+function infoheroe($heroe){
+	$.ajax({
+		url: 'index.php',
+		dataType: 'HTML',
+		type: "POST",
+		data: {
+			action: "infoheroe",
+			heroe: $heroe,
+			//usuario: user,
+			//contraseña: password,
+		},
+		success: function(data) {
+			$('#infolegendas').html(data);
+		},
+		error: function(data){
+			alert(data);
+		}
+	});
+}
+
+function infonavegacion($seccion){
+	$.ajax({
+		url: 'index.php',
+		dataType: 'HTML',
+		type: "POST",
+		data: {
+			action: "infonav",
+			seccion: $seccion,
+		},
+		success: function(data){
+			$('#huecobody').html(data);
+		},
+		error: function(data){
+			$('#huecobody').html(data);
+		}
+	});
+
+
+}
 function login(){
-			//var user = document.getElementById('usuario').value;
-			//var password = document.getElementById('contrasena').value;
 			$.ajax({
-			url: 'index.php',
-			dataType: 'html',
-			type: "POST",
-			data: {	
-				action: "login",
-				//usuario: user,
-				//contraseña: password,
-			},
-			success: function(data) {
-				$('#huecologin').html(data);
-			}
+				url: 'index.php',
+				dataType: 'html',
+				type: "POST",
+				data: {
+					action: "login",
+				},
+				success: function(data) {
+					$('#huecologin').html(data);
+				}
 			});
-			
-			
-			
 }
 
 function logout(){
@@ -37,7 +82,7 @@ function logout(){
 			url: 'index.php',
 			dataType: 'JSON',
 			type: "POST",
-			data: {	
+			data: {
 				action: "logout"
 			}
 			});

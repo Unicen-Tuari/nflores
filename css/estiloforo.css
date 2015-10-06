@@ -1,6 +1,34 @@
+.tablaheroe{
+	padding: 20px;
+}
+.cuerponoticia{
+	padding:20px;
+}
+
 .imagenteam{
 	margin-top:10px;
 	margin-bottom:30px;
+}
+.titulo{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 30px;
+	font: bold;
+}
+span{
+	float:right;
+	margin-right:8px;
+}
+
+body{
+	background-color:black;
+}
+.container{
+	background-color:white;
+	min-height: 600px;
+}
+
+.cursorpointer{
+    cursor:pointer;
 }
 
 .seccion{
@@ -31,4 +59,10 @@
 
 .tablaheroe{
 	margin-top:20px;
+}
+
+.estilologin{
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }

@@ -3,9 +3,9 @@
 class ModeloDB{
 	
 	private $user = 'root';
-	private $pass = 'mysqlpass';
+	private $pass = 'root';
 	private $host = 'localhost';
-	private $db = '';
+	private $db = 'dbForum';
 	protected $conn = null;
 	
 	//protected abstract function carga();//????
@@ -15,9 +15,7 @@ class ModeloDB{
 		$conn = null;
 		try{
 			$conn = new PDO(
-				"mysql:host=$this->host;dbname=$this->db",
-				$this->user,
-				$this->pass
+				"mysql:host=".$this->host.";dbname=".$this->db,$this->user,$this->pass
 			);
 		}
 		catch(PDOException $pe){
@@ -35,11 +33,11 @@ class ModeloDB{
 	}
 	
 	
-	public function query($sql){
+	public function query($sql,$arreglo){
 		$conn = $this->coneccion();
 		try{
 			$resultado = $conn->prepare($sql);
-			$resultado->execute();
+			$resultado->execute(array($arreglo));
 			if(!$resultado){
 				die(print($conn->errorInfo()));
 			}
@@ -48,7 +46,7 @@ class ModeloDB{
 			return $data;
 		}
 		catch (Exeption $e){
-			
+			return "ERROR";
 		}
 	}
 	 

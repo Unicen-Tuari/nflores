@@ -1,0 +1,28 @@
+{include file="header.tpl" title=foo}
+<body>
+<div class="container columna">
+<img src="imagenes/Portada_main2.png" class="img-responsive imagenteam"/>
+
+    <div class="row titulo col-lg-12">
+        Adminstrador de Noticias
+    </div>
+    <div class="row">
+        <div class="col-lg-12 buscador">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Buscar.. <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a onclick="inforequest('Categoria')">Categorias</a></li>
+                <li><a onclick="inforequest('Noticia')">Noticia</a></li>
+                <li><a onclick="inforequest('Usuario')">Usuarios</a></li>
+              </ul>
+            </div>
+        </div>
+    </div>
+	<div id="huecoreply" class="col-lg-12">
+	</div>
+</div>
+
+</div>
+{include file="footer.tpl"}
