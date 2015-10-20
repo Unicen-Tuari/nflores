@@ -1,6 +1,5 @@
 <table class="table table-hover tablaheroe">
-    {if $datos}
-        {foreach $datos as $noticia}
+    {if $noticias}
             <tr class="success">
                 <td>Id noticia: </td>
                 <td>Id categoria: </td>
@@ -8,6 +7,7 @@
                 <td>Texto Noticia: </td>
                 <td>Ruta Imagen: </td>
             </tr>
+        {foreach $noticias as $noticia}
             <tr>
                 <td>{$noticia['idnoticia']}</td>
                 <td>{$noticia['idcategoria']}</td>
@@ -23,11 +23,21 @@
     <div class="titulo">
     	<p>Agregar Nueva Noticia</p>
     </div>
-    <form class="form-horizontal" action="index.php?action=nuevanoticia" method="POST" enctype="multipart/form-data" >
+    <form class="form-horizontal" action="index.php?action=nuevanoticia" method="POST" enctype="multipart/form-data" id="form-noticia" >
       <div class="form-group">
     		<label for="idcategoria" class="col-sm-3">Id Categoria:</label>
     		<div class="col-sm-5">
     		  <input type="text" class="form-control" id="idcategoria" placeholder="ID Categoria" name="idcategoria">
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Categoria<span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              {foreach $categorias as $categoria}
+              <li onclick="cargarid('{$categoria['idcategoria']}','{$categoria['nombrecategoria']}')">{$categoria['nombrecategoria']}</li>
+              {/foreach}
+            </ul>
+          </div>
     		</div>
     	</div>
     	<div class="form-group">

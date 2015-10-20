@@ -1,34 +1,57 @@
-$(".cargarcategoria").on("click", function(event){
+function setHandlersForm(){
+
+	$("#form-noticia").on("submit", function(event){
         event.preventDefault();
-
-        var archivos = $("#imageToUpload").prop('file');
-
-        if(typeof(archivos) == 'undefined'){
-          mostrarMensaje("No pusiste imagenes");
-          return;
+        
+        if ($("#imageToUpload").val() == ''){
+        	alert('Seleccione Imagen');
+        	return;
+        }        
+        else{
+	        $.ajax({
+	          type: "POST",
+	          dataType: "HTML",
+	          url: event.target.action,
+	          data: new FormData(this),
+	          success: function(data){
+	            $('#huecoreply').html(data);
+	          },
+	          error: function(){
+	            alert("Error al Enviar el proceso");
+	          },
+	          contentType : false,
+	          processData : false
+	        });
         }
+	});
 
-        var datos = new FormData();
+	$("#form-categoria").on("submit", function(event){
+        event.preventDefault();
+        
+        if ($("#imageToUpload").val() == ''){
+        	alert('Seleccione Imagen');
+        	return;
+        }        
+        else{
+	        $.ajax({
+	          type: "POST",
+	          dataType: "HTML",
+	          url: event.target.action,
+	          data: new FormData(this),
+	          success: function(data){
+	            $('#huecoreply').html(data);
+	          },
+	          error: function(){
+	            alert("Error al Enviar el proceso");
+	          },
+	          contentType : false,
+	          processData : false
+	        });
+        }
+	});
 
-        $.each(archivos, function(key,value){
-          datos.append(key,value);
-        });
-        $.ajax({
-          type: "POST",
-          dataType: "json",
-          url: event.target.href,
-          data: datos,
-          success: function(data){
-            //alert('volvio bien');
-          },
-          error: function(){
-            alert("No anduvo la llamada AJAX");
-          },
-          contentType : false,
-          processData : false
-        });
 
-});
+}
 
 function inforequest($nombretabla){
 	$('#dropdownMenu1').html($nombretabla+" <span class='caret'></span>");
@@ -42,6 +65,7 @@ function inforequest($nombretabla){
 		},
 		success:function(data){
 			$('#huecoreply').html(data);
+			setHandlersForm();
 		}
 	});
 
@@ -72,4 +96,11 @@ function logout(){
 				action: "logout"
 			}
 			});
+}
+
+
+function cargarid($id,$nombre){
+  $('#dropdownMenu2').html($nombre+"<span class='caret'></span>");
+  var texto = document.getElementById("idcategoria");
+  texto.value = $id;
 }

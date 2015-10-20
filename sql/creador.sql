@@ -9,12 +9,19 @@ CREATE TABLE Categoria
 
 CREATE TABLE Noticia(
 	idnoticia int not null AUTO_INCREMENT,
-	idcategoria int not null REFERENCES Categoria,
+	idcategoria int not nulls,
   titulonoticia varchar(40) not null,
 	infonoticia varchar(500) not null,
-  pathimagen varchar(50) not null,
+  pathimagen varchar(50) not null DEFAULT 'imagenes/Portada_perfil.png',
 	CONSTRAINT PK_noticia primary key (idnoticia)
+	CONSTRAINT FK_categoria (idcategoria) REFERENCES (Categoria)
 );
+/*
+ALTER TABLE Categoria
+ADD CONSTRAINT FK_categoria
+FOREIGN KEY (idcategoria)
+REFERENCES Categoria(idcategoria)
+*/
 
 CREATE TABLE Usuario
 (

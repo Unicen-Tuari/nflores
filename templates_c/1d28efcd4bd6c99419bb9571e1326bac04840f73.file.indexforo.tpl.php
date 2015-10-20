@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-09-28 23:37:55
-         compiled from "./templates/indexforo.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:154751440256031ab552fc57-85358794%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.19, created on 2015-10-14 18:50:54
+         compiled from ".\templates\indexforo.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:20169561e87ee4d3298-77637811%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '6d8cc64c16448d53cb2798469457f69d1b41e076' => 
+    '1d28efcd4bd6c99419bb9571e1326bac04840f73' => 
     array (
-      0 => './templates/indexforo.tpl',
-      1 => 1443456936,
+      0 => '.\\templates\\indexforo.tpl',
+      1 => 1443568892,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '154751440256031ab552fc57-85358794',
+  'nocache_hash' => '20169561e87ee4d3298-77637811',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_56031ab559dc15_48769319',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_561e87ee5d8e40_96827941',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_56031ab559dc15_48769319')) {function content_56031ab559dc15_48769319($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("headerforo.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>'foo'), 0);?>
+<?php if ($_valid && !is_callable('content_561e87ee5d8e40_96827941')) {function content_561e87ee5d8e40_96827941($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("headerforo.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>'foo'), 0);?>
 
 <body>
 	<div class="container columna">
@@ -50,7 +50,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	</div>
 	<script src="js/jquery-2.1.1.js"></script>
 	<script src="js/bootstrap.js"></script>
-</body> 
+</body>
 <?php echo $_smarty_tpl->getSubTemplate ("footerforo.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 <?php }} ?>

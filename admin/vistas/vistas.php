@@ -19,10 +19,14 @@ class Vista{
 		$this->smarty->assign("datos", $data);
 		$this->smarty->display('form'.$tabla.'.tpl');
 	}
+	function formfull($data,$datos2,$tabla){
+		$this->smarty->assign("noticias",$data);
+		$this->smarty->assign("categorias",$datos2);
+		$this->smarty->display('form'.$tabla.'.tpl');
+	}
 	function mostrarLogin(){
 	    $this->smarty->display('loginform.tpl');
 	}
-
 }
 
 

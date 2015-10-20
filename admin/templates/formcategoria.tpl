@@ -3,11 +3,12 @@
 </div>
 <table class="table table-hover tablaheroe">
     {if $datos}
-        {foreach $datos as $categoria}
+
             <tr class="success">
                 <td>Nombre Categoria: </td>
                 <td>Id categoria: </td>
             </tr>
+				{foreach $datos as $categoria}
             <tr>
                 <td>{$categoria['nombrecategoria']} <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></td>
                 <td>{$categoria['idcategoria']}</td>
@@ -18,7 +19,7 @@
 <div class="titulo">
 	<p>Agregar Nueva Categoria</p>
 </div>
-<form class="form-horizontal" action="index.php?action=nuevacategoria" method="POST" enctype="multipart/form-data" >
+<form class="form-horizontal" action="index.php?action=nuevacategoria" method="POST" enctype="multipart/form-data" id="form-categoria">
 	<div class="form-group">
 		<label for="nombrecategoria" class="col-sm-3">Nombre Categoria:</label>
 		<div class="col-sm-5">
