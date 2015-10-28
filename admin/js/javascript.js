@@ -1,3 +1,16 @@
+function crearCategoria(data) {
+
+  $.ajax({ url: 'js/templates/categorias.mst',
+  		success: function(template) {
+    		//var rendered = Mustache.render(template);
+    		//var rendered = Mustache.render(template);
+			$('#huecoreply').html(data);
+      	}
+    });
+}
+
+
+
 function setHandlersForm(){
 
 	$("#form-noticia").on("submit", function(event){
@@ -55,16 +68,13 @@ function setHandlersForm(){
 
 function inforequest($nombretabla){
 	$('#dropdownMenu1').html($nombretabla+" <span class='caret'></span>");
+
 	$.ajax({
-		url:'index.php',
-		dataType:'html',
-		type:"POST",
-		data:{
-			action: 'datarequest',
-			tabla: $nombretabla,
-		},
-		success:function(data){
-			$('#huecoreply').html(data);
+		url:'api/'+$nombretabla,
+		dataType:'JSON',
+		type:"GET",
+		success:function(data){			
+			crearCategoria(data[0]);
 			setHandlersForm();
 		}
 	});

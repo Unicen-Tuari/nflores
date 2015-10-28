@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-10-16 21:48:26
+<?php /* Smarty version Smarty-3.1.19, created on 2015-10-28 18:37:32
          compiled from ".\templates\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:232015621548aba9903-89220096%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '70b92b8be9f0cd4e7353abfaedeaa86bbd5a85eb' => 
     array (
       0 => '.\\templates\\header.tpl',
-      1 => 1443635714,
+      1 => 1446053845,
       2 => 'file',
     ),
   ),
@@ -15,9 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
   'unifunc' => 'content_5621548abad780_07409495',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5621548abad780_07409495')) {function content_5621548abad780_07409495($_smarty_tpl) {?><!Doctype HTML>
 <html lang="en">
@@ -32,5 +32,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<script src="../js/jquery.min.js"></script>
 	<script src="../js/bootstrap.js"></script>
 	<script src="js/javascript.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.3/mustache.js"></script>
 </head>
 <?php }} ?>

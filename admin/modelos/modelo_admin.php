@@ -64,9 +64,20 @@ class Modelo_Admin extends Modelo_Base{
 
 		public function getCategorias(){
 			try{
-				$consulta = $this->db->prepare("SELECT * FROM Categoria");
-				$consulta->execute();
-				return $consulta->fetchAll();				
+				$consulta = "SELECT * FROM Categoria";
+				$datos = $this->query($consulta,"");
+				return $datos;
+			}	
+			catch(Exception $e){
+					return $e;
+			}		
+		}
+
+		public function getNoticias(){
+			try{
+				$consulta = "SELECT * FROM Categoria, Noticia ";
+				$datos = $this->query($consulta,"");
+				return $datos;
 			}	
 			catch(Exception $e){
 					return $e;

@@ -1,8 +1,11 @@
 <?php
+
+
 abstract class ApiBase{
   protected $method = '';
   protected $endpoint = '';
   protected $args = array();
+  
   function __construct($request){
     header("Content-Type: application/json");
     $this->args = explode('/', rtrim($request, '/')); // tarea/123 [tarea,123]

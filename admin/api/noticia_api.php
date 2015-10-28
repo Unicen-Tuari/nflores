@@ -1,16 +1,17 @@
 <?php
 require_once 'api_base.php';
-require_once '../model/tareas_model.php';
-class TareaApi extends ApiBase {
+require_once '../../modelos/modelo_base.php';
+require_once '../modelos/modelo_admin.php';
+class NoticiaApi extends ApiBase {
   private $model;
   function __construct($request){
     parent::__construct($request);
-    $this->model = new TareasModel();
+    $this->model = new Modelo_Admin();
   }
-  function tarea(){
+  function Noticia(){
     switch ($this->method) {
       case 'GET':
-        return $this->model->getTareas();
+        return $this->model->getNoticias();
         break;
       case 'DELETE':
         if(count($this->args) > 0) return $this->model->borrarTarea($this->args[0]);

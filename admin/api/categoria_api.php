@@ -2,13 +2,13 @@
 require_once 'api_base.php';
 require_once '../../modelos/modelo_base.php';
 require_once '../modelos/modelo_admin.php';
-class TareaApi extends ApiBase {
+class CategoriaApi extends ApiBase {
   private $model;
   function __construct($request){
     parent::__construct($request);
     $this->model = new Modelo_Admin();
   }
-  function categoria(){
+  function Categoria(){
     switch ($this->method) {
       case 'GET':
         return $this->model->getCategorias();
