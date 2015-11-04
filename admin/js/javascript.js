@@ -1,12 +1,16 @@
 function crearCategoria(data) {
-
-  $.ajax({ url: 'js/templates/categorias.mst',
-  		success: function(template) {
-    		//var rendered = Mustache.render(template);
-    		//var rendered = Mustache.render(template);
-			$('#huecoreply').html(data);
-      	}
-    });
+	var title = "<div class='titulo'><p>Categorias</p></div><table class='table table-hover'> <tr class='success'><td>Nombre Categoria</td><td>Id Categoria</td></tr>";
+	$('#huecoreply').append(title);
+	for(var key in data) {
+		$.ajax({ 
+			url: 'js/templates/categorias.mst',
+			success: function(template) {
+				var rendered = Mustache.render(template,data[key]);
+				$('#huecoreply').append(rendered);
+			}
+		});
+	}		
+	$('#huecoreply').append('</table>');
 }
 
 
@@ -73,8 +77,11 @@ function inforequest($nombretabla){
 		url:'api/'+$nombretabla,
 		dataType:'JSON',
 		type:"GET",
-		success:function(data){			
-			crearCategoria(data[0]);
+		success:function(data){
+			if (data[0]['idcategoria']){
+				crearCategoria(data);
+			}
+			//else {crearNoticia(data);}
 			setHandlersForm();
 		}
 	});
