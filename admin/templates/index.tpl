@@ -17,6 +17,7 @@
                 <li><a onclick="inforequest('Noticia')">Noticia</a></li>
                 <li><a onclick="inforequest('Usuario')">Usuarios</a></li>
               </ul>
+              <button type="button" class="btn btn-success" onclick="logout()">Logout</button>
             </div>
         </div>
     </div>

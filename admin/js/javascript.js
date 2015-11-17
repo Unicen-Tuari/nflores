@@ -67,7 +67,51 @@ function setHandlersForm(){
         }
 	});
 
+	$('#form-login').on("submit",function(event){
+		event.preventDefault();
+		var pass = (CryptoJS.MD5($('#inputPasswordlogin').val())).toString();
+		$.ajax({
+			url: event.target.action,
+			dataType: 'html',
+			type: "POST",
+			data: {
+				action: 'login',
+				email: $('#inputEmaillogin').val(),
+				password: pass,
+				success: function(data){
+					$(document).html(data);
+				}
+			}
+		});
+	});
 
+	$('#form-register').on("submit",function(event){
+		event.preventDefault();
+		var pass = (CryptoJS.MD5($('#inputPasswordregister').val())).toString();
+		var mail = $('#inputEmailregister').val();
+		$.ajax({
+			url: event.target.action,
+			dataType: 'JSON',
+			type: "POST",
+			data: {
+				action: "register",
+				email: mail,
+				password: pass,
+			},
+			success:function(data){
+				//$('#replyregister').html(data);
+				alert("Registrado exitosamente: "+data);
+			}
+		});
+	});
+}
+
+function logout(){
+	$.ajax({
+		url:'index.php?action=logout',
+		dataType:'JSON',
+		type:"POST",
+	});
 }
 
 function inforequest($nombretabla){
@@ -78,6 +122,7 @@ function inforequest($nombretabla){
 		dataType:'JSON',
 		type:"GET",
 		success:function(data){
+			$('#huecoreply').html("");
 			if (data[0]['idcategoria']){
 				crearCategoria(data);
 			}
@@ -88,36 +133,13 @@ function inforequest($nombretabla){
 
 }
 
-
-
-function login(){
-			$.ajax({
-				url: 'index.php',
-				dataType: 'html',
-				type: "POST",
-				data: {
-					action: "login",
-				},
-				success: function(data) {
-					$('#huecologin').html(data);
-				}
-			});
-}
-
-function logout(){
-	$.ajax({
-			url: 'index.php',
-			dataType: 'JSON',
-			type: "POST",
-			data: {
-				action: "logout"
-			}
-			});
-}
-
-
 function cargarid($id,$nombre){
   $('#dropdownMenu2').html($nombre+"<span class='caret'></span>");
   var texto = document.getElementById("idcategoria");
   texto.value = $id;
-}
+}	
+
+
+$(document).ready(function(){
+	setHandlersForm();
+});

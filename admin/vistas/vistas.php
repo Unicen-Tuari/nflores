@@ -24,9 +24,7 @@ class Vista{
 		$this->smarty->assign("categorias",$datos2);
 		$this->smarty->display('form'.$tabla.'.tpl');
 	}
-	function mostrarLogin(){
-	    $this->smarty->display('loginform.tpl');
-	}
+	
 }
 
 

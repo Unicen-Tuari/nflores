@@ -1,4 +1,5 @@
 <?php
+include_once '../modelos/modelo_base.php';
 
 class Modelo_Admin extends Modelo_Base{	
 
@@ -82,6 +83,18 @@ class Modelo_Admin extends Modelo_Base{
 			catch(Exception $e){
 					return $e;
 			}		
+		}
+
+
+		public function getUsuario($email){
+			try{
+				$consulta = "SELECT email,password FROM Usuario Where email LIKE '(?)'";
+				$datos = $this->query($consulta,$email);
+				return $datos->fetch(PDO::FETCH_ASSOC);
+			}
+			catch(Exception $e){
+				return $e;
+			}
 		}
 }
 

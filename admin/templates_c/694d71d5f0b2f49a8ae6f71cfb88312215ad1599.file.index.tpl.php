@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-10-16 21:48:26
+<?php /* Smarty version Smarty-3.1.19, created on 2015-11-17 23:32:24
          compiled from ".\templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:130645621548aac3147-90824552%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '694d71d5f0b2f49a8ae6f71cfb88312215ad1599' => 
     array (
       0 => '.\\templates\\index.tpl',
-      1 => 1443651960,
+      1 => 1447799542,
       2 => 'file',
     ),
   ),
@@ -15,9 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
   'unifunc' => 'content_5621548ab9dd89_14374121',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5621548ab9dd89_14374121')) {function content_5621548ab9dd89_14374121($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>'foo'), 0);?>
 
@@ -39,6 +39,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <li><a onclick="inforequest('Noticia')">Noticia</a></li>
                 <li><a onclick="inforequest('Usuario')">Usuarios</a></li>
               </ul>
+              <button type="button" class="btn btn-success" onclick="logout()">Logout</button>
             </div>
         </div>
     </div>

@@ -37,7 +37,7 @@ private $user = 'root';
 		$conn = $this->coneccion();
 		try{
 			$resultado = $conn->prepare($sql);
-			$resultado->execute(array($arreglo));
+			$resultado->execute($arreglo);
 			if(!$resultado){
 				die(print($conn->errorInfo()));
 			}
@@ -47,8 +47,20 @@ private $user = 'root';
 			return $data;
 		}
 		catch (Exeption $e){
-			return "ERROR";
+			return $e;
 		}
 	}
+
+	public function infoporcate($idcategoria){
+		$cons = "SELECT * FROM Noticia n, Categoria c WHERE n.idcategoria =c.idcategoria AND c.idcategoria = ?";
+        $valor = array($_REQUEST['idcategoria']);
+        return $this->query($cons,$valor);
+	}
+
+	public function getcategorias(){
+		$cons = "SELECT * FROM Categoria";
+		return $this->query($cons,array());
+	}
+
 }
 ?>
