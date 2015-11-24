@@ -21,8 +21,14 @@
             </div>
         </div>
     </div>
-	<div id="huecoreply" class="col-lg-12">
-	</div>
+    <div class="row huecotabla">
+      <div id="titulo-tabla" class="col-lg-12">
+      </div>
+      <div id="tablainfo" class="table-respoinsive">
+      </div>
+      <div id="createform" class="col-lg-12">
+      </div>
+    </div>
 </div>
 
 </div>

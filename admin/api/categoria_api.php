@@ -14,10 +14,10 @@ class CategoriaApi extends ApiBase {
         return $this->model->getCategorias();
         break;
       case 'DELETE':
-        if(count($this->args) > 0) return $this->model->borrarTarea($this->args[0]);
+        if(count($this->args) > 0) return $this->model->deleteCategoria($this->args[0]);
         break;
       case 'POST':
-        if(isset($_POST['tarea'])) return $this->model->agregarTarea($_POST['tarea']);
+        return $this->model->agregarcategoria($_POST,$_FILES["imageToUpload"]);
         break;
       default:
             return 'Verbo no soportado';

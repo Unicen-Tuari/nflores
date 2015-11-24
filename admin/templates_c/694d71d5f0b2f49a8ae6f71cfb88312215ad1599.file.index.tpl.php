@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-11-17 23:32:24
+<?php /* Smarty version Smarty-3.1.19, created on 2015-11-24 13:45:37
          compiled from ".\templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:130645621548aac3147-90824552%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '694d71d5f0b2f49a8ae6f71cfb88312215ad1599' => 
     array (
       0 => '.\\templates\\index.tpl',
-      1 => 1447799542,
+      1 => 1448369135,
       2 => 'file',
     ),
   ),
@@ -43,8 +43,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             </div>
         </div>
     </div>
-	<div id="huecoreply" class="col-lg-12">
-	</div>
+    <div class="row huecotabla">
+      <div id="titulo-tabla" class="col-lg-12">
+      </div>
+      <div id="tablainfo" class="table-respoinsive">
+      </div>
+      <div id="createform" class="col-lg-12">
+      </div>
+    </div>
 </div>
 
 </div>

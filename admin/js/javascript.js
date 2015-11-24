@@ -1,20 +1,83 @@
 function crearCategoria(data) {
-	var title = "<div class='titulo'><p>Categorias</p></div><table class='table table-hover'> <tr class='success'><td>Nombre Categoria</td><td>Id Categoria</td></tr>";
-	$('#huecoreply').append(title);
+	var columnas = "<table class='table table-hover'> <tr class='success'><th>Nombre Categoria</th><th>Id Categoria</th></tr>";
+	$('#tablainfo').append(columnas);
+	$('#titulo-tabla').html ="<div class='titulo'><p>Categorias</p></div>"; 
 	for(var key in data) {
 		$.ajax({ 
 			url: 'js/templates/categorias.mst',
 			success: function(template) {
+				$('#tablainfo').append("<tr>");
 				var rendered = Mustache.render(template,data[key]);
-				$('#huecoreply').append(rendered);
+				$('#tablainfo').append(rendered);
+				$('#tablainfo').append("</tr>");
 			}
 		});
-	}		
-	$('#huecoreply').append('</table>');
+	}
+	$('#tablainfo').append('</table>');
+	//formulario para agregar
+	$.ajax({
+		url:'js/templates/formcategoria.mst',
+		success:function(template){
+			var rendered = Mustache.render(template);
+			$('#createform').html(rendered);
+		}
+	});	
+}
+
+function crearNoticia(data) {
+	var columnas = "<table class='table table-hover'> <tr class='success'><th>Categoria</th><th>Id Cat</th><th>Titulo Noticia</th><th>Id Not</th><th>Url Imagen</th></tr>";
+	$('#titulo-tabla').html ="<div class='titulo'><p>Noticias</p></div>"; 
+	$('#tablainfo').html(columnas);
+	for(var key in data) {
+		$.ajax({ 
+			url: 'js/templates/noticias.mst',
+			success: function(template) {
+				$('#tablainfo').append("<tr>");
+				var rendered = Mustache.render(template,data[key]);
+				$('#tablainfo').append(rendered);				
+				$('#tablainfo').append("</tr>");
+			}
+		});
+	}
+
+	$('#tablainfo').append('</table>');
+	$.ajax({
+		url:'js/templates/formnoticia.mst',
+		success:function(template){
+			var rendered = Mustache.render(template,data[key]);
+			$('#createform').html(rendered);
+		}
+	});
+
+	$.ajax({
+		type:"GET",
+		url:'api/Categoria',
+		datatype: "JSON",
+		success:function(data){
+			renderDropCategorias(data);
+		}
+	});	
 }
 
 
 
+function borrarCategoria(idCat){
+	$.ajax(
+    {
+      	method: "DELETE",
+      	url: "api/Categoria/"+idCat
+    })
+  	.done(function(data) {
+  		//cambiar
+     	//$('#tarea'+idCat).remove();
+     	alert(data);
+  	})
+  	.fail(function() {
+  		alert('Imposible borrar la tarea');
+  	});
+}
+
+//--------------------------------HANDLERS PARA EVITAR REFRESCO	
 function setHandlersForm(){
 
 	$("#form-noticia").on("submit", function(event){
@@ -27,11 +90,11 @@ function setHandlersForm(){
         else{
 	        $.ajax({
 	          type: "POST",
-	          dataType: "HTML",
+	          dataType: "JSON",
 	          url: event.target.action,
-	          data: new FormData(this),
+	          data: {noticia: new FormData(this)},
 	          success: function(data){
-	            $('#huecoreply').html(data);
+	            alert(data);
 	          },
 	          error: function(){
 	            alert("Error al Enviar el proceso");
@@ -54,9 +117,9 @@ function setHandlersForm(){
 	          type: "POST",
 	          dataType: "HTML",
 	          url: event.target.action,
-	          data: new FormData(this),
+	          data: {categoria: new FormData(this)},
 	          success: function(data){
-	            $('#huecoreply').html(data);
+	          	alert(data);
 	          },
 	          error: function(){
 	            alert("Error al Enviar el proceso");
@@ -79,7 +142,7 @@ function setHandlersForm(){
 				email: $('#inputEmaillogin').val(),
 				password: pass,
 				success: function(data){
-					$(document).html(data);
+					location.href = "index.php";
 				}
 			}
 		});
@@ -97,20 +160,8 @@ function setHandlersForm(){
 				action: "register",
 				email: mail,
 				password: pass,
-			},
-			success:function(data){
-				//$('#replyregister').html(data);
-				alert("Registrado exitosamente: "+data);
 			}
 		});
-	});
-}
-
-function logout(){
-	$.ajax({
-		url:'index.php?action=logout',
-		dataType:'JSON',
-		type:"POST",
 	});
 }
 
@@ -122,24 +173,79 @@ function inforequest($nombretabla){
 		dataType:'JSON',
 		type:"GET",
 		success:function(data){
-			$('#huecoreply').html("");
-			if (data[0]['idcategoria']){
-				crearCategoria(data);
-			}
-			//else {crearNoticia(data);}
+			$('#huecotabla').html("");
+			$('#tablainfo').html("");
+			
+			if (data != ""){
+				if (typeof data[0]['idnoticia'] == "undefined"){
+					crearCategoria(data);
+				}
+				else{
+					crearNoticia(data);
+				}
+			}	
+			else{
+				$.ajax({
+					url:'js/templates/formcategoria.mst',
+					success:function(template){
+						var rendered = Mustache.render(template);
+						$('#createform').html(rendered);
+					}
+				});
+			}		
 			setHandlersForm();
 		}
 	});
-
 }
 
+function getNoticia(idnoticia){
+	$.ajax({
+		url:'api/Noticia',
+		datatype:'JSON',
+		type:"GET",
+		data:{noticia: idnoticia},
+		success:function(data){
+			$('#huecotabla').html("");
+			$('#tablainfo').html("");
+			mostrarNoticia(data);
+			setHandlersForm();
+		}
+	});
+}
+
+//minifuncion para mostrar lo seleccionado
 function cargarid($id,$nombre){
   $('#dropdownMenu2').html($nombre+"<span class='caret'></span>");
   var texto = document.getElementById("idcategoria");
   texto.value = $id;
-}	
+}
+
+function renderDropCategorias(data){
+	for (var key in data) {
+		$.ajax({
+			url:'js/templates/dropcategoria.mst',
+			success:function(template){
+				var rendered = Mustache.render(template,data[key])
+				$('#menucategorias').append(rendered);
+			}
+		});
+	};
+}
+
+function logout(){
+	$.ajax({
+		url:'index.php?action=logout',
+		dataType:'JSON',
+		type:"POST"
+	})
+	.done(function(){
+
+	});
+	location.href = "index.php";
+}
 
 
+//activacion de los handlers
 $(document).ready(function(){
 	setHandlersForm();
 });

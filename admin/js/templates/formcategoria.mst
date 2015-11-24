@@ -1,7 +1,7 @@
 <div class="titulo">
 	<p>Agregar Nueva Categoria</p>
 </div>
-<form class="form-horizontal" action="index.php?action=nuevacategoria" method="POST" enctype="multipart/form-data" id="form-categoria">
+<form class="form-horizontal" action="api/Categoria" method="POST" enctype="multipart/form-data" id="form-categoria">
 	<div class="form-group">
 		<label for="nombrecategoria" class="col-sm-3">Nombre Categoria:</label>
 		<div class="col-sm-5">

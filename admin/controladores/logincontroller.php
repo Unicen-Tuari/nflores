@@ -10,6 +10,8 @@ function __construct($view,$model){
   $this->model = $model;
 }
 
+
+
 function Procesar_login($email,$password){
 	$usuario = $this->model->getUsuario($email);
 	//chequeo usuaro['pass'] con el pass pasado y devolver
@@ -17,7 +19,6 @@ function Procesar_login($email,$password){
 	if ($usuario['password'] == $password){
 		session_start();
 		$_SESSION['email'] = $_REQUEST['email'];
-		header("Location: index.php");
 		die();
 		//exit;
 	}
@@ -31,15 +32,12 @@ function Procesar_login($email,$password){
 function logout(){
 	session_start();
 	session_destroy();
-	header("Location: index.php");
-	die();
+	return "success";
 }
 
 function Procesar_register($email,$password){
 	return $this->model->nuevoUsuario($email,$password);
 }
-
-
 
 
 }
