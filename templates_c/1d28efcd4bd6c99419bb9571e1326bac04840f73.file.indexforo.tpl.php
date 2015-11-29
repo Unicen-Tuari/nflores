@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-10-14 18:50:54
+<?php /* Smarty version Smarty-3.1.19, created on 2015-11-27 21:52:35
          compiled from ".\templates\indexforo.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:20169561e87ee4d3298-77637811%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1d28efcd4bd6c99419bb9571e1326bac04840f73' => 
     array (
       0 => '.\\templates\\indexforo.tpl',
-      1 => 1443568892,
+      1 => 1447115240,
       2 => 'file',
     ),
   ),
@@ -15,9 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.19',
   'unifunc' => 'content_561e87ee5d8e40_96827941',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_561e87ee5d8e40_96827941')) {function content_561e87ee5d8e40_96827941($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("headerforo.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>'foo'), 0);?>
 
@@ -36,13 +36,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		<img src="imagenes/Portada_main2.png" class="img-responsive imagenteam"/>
 		<ul class="list-inline">
 			<li><a onclick="infonavegacion('home')" class="cursorpointer" >Home</a></li>
-			<li><a onclick="infonavegacion('categoria')" class="cursorpointer">About</li>
-			<li><a onclick="infonavegacion('contactos')" class="cursorpointer">Contactos</li>
-			<li><a onclick="infonavegacion('registro')" class="cursorpointer">Registrarse</li>
+			<li><a onclick="infonavegacion('categoria')" class="cursorpointer">About</a></li>
+			<li><a onclick="infonavegacion('contactos')" class="cursorpointer">Contactos</a></li>
 		</ul>
-		<div id="huecologin" class="estilologin">
-			<a onclick="login()">Login</a>
-		</div>
 		<div class="row" id="huecobody">
 			<?php echo $_smarty_tpl->getSubTemplate ("home.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>'foo2'), 0);?>
 

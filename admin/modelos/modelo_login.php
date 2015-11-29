@@ -20,8 +20,7 @@ class Modelo_Login extends Modelo_Base{
 			$consulta = "INSERT INTO usuario(email,password) VALUES (?,?)";
 			$valores = array($email, $password);			
 			$this->query($consulta,$valores);
-			return "Exito";
-			
+			return "Success";			
 		} catch (Exception $e) {
 			return $e;
 		}

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2015-11-15 22:53:04
+<?php /* Smarty version Smarty-3.1.19, created on 2015-11-27 19:36:19
          compiled from ".\templates\loginindex.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:6442563f883f3a7a24-35847597%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '487e72466063d0a5ed864cc3c71ac1bf63d644c2' => 
     array (
       0 => '.\\templates\\loginindex.tpl',
-      1 => 1447624382,
+      1 => 1448477042,
       2 => 'file',
     ),
   ),
@@ -27,10 +27,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="NT5 admin">
+    <meta name="author" content="Jacksun">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>NT5-Admin</title>
 
     <link href="../css/bootstrap.css" rel="stylesheet">
     <script src="../js/jquery-2.1.1.js"></script>
@@ -38,7 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <script src="js/javascript.js"></script>
     <script src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/md5.js"></script>
 
-    
+
   </head>
 
   <body>
@@ -78,4 +78,5 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     </div>
   </body>
-</html><?php }} ?>
+</html>
+<?php }} ?>

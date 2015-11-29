@@ -10,29 +10,27 @@ function __construct($view,$model){
   $this->model = $model;
 }
 
-
+function checksession(){
+  session_start();
+  if (isset($_SESSION['email'])) return true;
+  return false;
+}
 
 function Procesar_login($email,$password){
-	$usuario = $this->model->getUsuario($email);
-	//chequeo usuaro['pass'] con el pass pasado y devolver
 
-	if ($usuario['password'] == $password){
-		session_start();
+	$usuario = $this->model->getUsuario($email);
+	if ($usuario['password'] === $password){
 		$_SESSION['email'] = $_REQUEST['email'];
-		die();
-		//exit;
+		return "succes";
 	}
 	else{
 		return "PassWord o Usuario Incorrecto";
 	}
-
-	$this->view->index();
 }
 
 function logout(){
-	session_start();
 	session_destroy();
-	return "success";
+	return "SUCCESS";
 }
 
 function Procesar_register($email,$password){
@@ -41,4 +39,4 @@ function Procesar_register($email,$password){
 
 
 }
-?> 
+?>

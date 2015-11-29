@@ -35,7 +35,6 @@ class Vista{
 
 	function mostrarnoticia($datos){
 		$this->smarty->assign("noticias",$datos);
-		//var_dump($datos);
 		$this->smarty->display('noticia.tpl');
 	}
 

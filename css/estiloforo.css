@@ -1,3 +1,9 @@
+hr{
+	border-color: black;
+}
+#categoria{
+	float:right;
+}
 .tablaheroe{
 	padding: 20px;
 }
@@ -8,6 +14,11 @@
 .imagenteam{
 	margin-top:10px;
 	margin-bottom:30px;
+	width: 100%;
+}
+.imghome{
+	max-height: 400px;
+	max-width: 400px;
 }
 .titulo{
 	font-family: "Times New Roman", Times, serif;
@@ -24,7 +35,7 @@ body{
 }
 .container{
 	background-color:white;
-	min-height: 600px;
+	min-height: 800px;
 }
 
 .cursorpointer{
@@ -32,37 +43,36 @@ body{
 }
 
 .seccion{
-	border:solid;
 	margin-top:10px;
 	margin-bottom:10px;
 }
 
 .cabezera{
-	border-top-left-radius:2em;
-	border-top-right-radius:2em;
-	border:solid;
-	background: linear-gradient(top,tomato, #009900, #003399);
-}
-.cabezera p{
-	margin-left:15px;
+	text-align: center;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	color: white;
+	font-size: 20px;
+	background-image: url("../imagenes/headerimg.png");
 }
 .iconomenu{
 	height:100px;
-	border:solid;
-	border-right: dotted 3px #000000;
+	margin:10px;
+	border-radius: 50%;
+	border-right: dotted 3px #006699;
 }
 
 .textomenu{
-	margin-top:30px;
-	border:solid;
+	margin-top: 50px;
 }
 
 .tablaheroe{
 	margin-top:20px;
 }
 
-.estilologin{
-    position: absolute;
-    top: 10px;
-    right: 10px;
+#textoerror{
+	margin-left: 30%;
+	margin-top: 80px;
 }

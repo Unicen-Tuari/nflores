@@ -1,15 +1,20 @@
-<form>
+<form class="form-horizontal" action="index.php?action=mail" method="POST" id="form-contactos">
   <div class="form-group">
-    <label for="exampleInputEmail1">Nombre/Nickname</label>
-    <input type="text" class="form-control" placeholder="Identidad" id="nickname">
+    <label for="nickname" class="col-sm-3">Nickname</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="nickname" placeholder="Nick" name="nickname">
+    </div>
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">E-Mail</label>
-	<input type="email" class="form-control" id="email" placeholder="Puntero">
+    <label class="col-sm-3" for="e-mail">E-Mail</label>
+    <div class="col-sm-5">
+      <input class="form-control" type="email"  id="e-mail" placeholder="E-mail" name="e-mail" >
+    </div>
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Comentarios</label>
-    <textarea class="form-control" rows="3" placeholder="Imaginacion"></textarea>
-  <div>
-  <button type="submit" class="btn btn-default">Submit</button>
+    <label class="col-sm-3" for="informacion">Texto</label>
+    <textarea class="form-control" rows="8" placeholder="Informacion" id="informacion" name="informacion"></textarea>
+  </div>
+  <br>
+  <button type="submit" class="btn btn-default cargarcategoria">Send</button>
 </form>

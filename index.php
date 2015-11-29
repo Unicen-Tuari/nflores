@@ -4,14 +4,13 @@
  *
  * @package Example-application
  */
-error_reporting(E_ALL);
-ini_set("display_errors",1);
-
+//error_reporting(E_ALL);
+//ini_set("display_errors",1);
 include_once 'modelos/modelo_base.php';
 include_once 'vistas/vistas.php';
 include_once 'controladores/controlador.php';
-include_once 'controladores/logincontroller.php';
 include_once 'controladores/heroecontroller.php';
+include_once 'modelos/modelo_mail.php';
 $model = new Modelo_Base();
 $view = new Vista();
 $controller = new controller($model, $view);

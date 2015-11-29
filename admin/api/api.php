@@ -4,9 +4,10 @@ require_once 'noticia_api.php';
 require_once 'api_base.php';
 
 $route = substr($_REQUEST["parametros"], 0, 3);
+
 switch ($route) {
 	case 'Cat':
-		$categoriaAPI = new CategoriaAPI($_REQUEST['parametros']);
+		$categoriaAPI = new CategoriaAPI($_REQUEST['parametros']);		
 		echo $categoriaAPI->processAPI();
 		break;
 	case 'Not':

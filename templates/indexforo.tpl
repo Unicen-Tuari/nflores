@@ -14,13 +14,9 @@
 		<img src="imagenes/Portada_main2.png" class="img-responsive imagenteam"/>
 		<ul class="list-inline">
 			<li><a onclick="infonavegacion('home')" class="cursorpointer" >Home</a></li>
-			<li><a onclick="infonavegacion('categoria')" class="cursorpointer">About</li>
-			<li><a onclick="infonavegacion('contactos')" class="cursorpointer">Contactos</li>
-			<li><a onclick="infonavegacion('registro')" class="cursorpointer">Registrarse</li>
+			<li><a onclick="infonavegacion('categoria')" class="cursorpointer">About</a></li>
+			<li><a onclick="infonavegacion('contactos')" class="cursorpointer">Contactos</a></li>
 		</ul>
-		<div id="huecologin" class="estilologin">
-			<a onclick="login()">Login</a>
-		</div>
 		<div class="row" id="huecobody">
 			{include file="home.tpl" title=foo2}
 		</div>

@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="NT5 admin">
+    <meta name="author" content="Jacksun">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>NT5-Admin</title>
 
     <link href="../css/bootstrap.css" rel="stylesheet">
     <script src="../js/jquery-2.1.1.js"></script>
@@ -17,7 +17,7 @@
     <script src="js/javascript.js"></script>
     <script src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/md5.js"></script>
 
-    
+
   </head>
 
   <body>

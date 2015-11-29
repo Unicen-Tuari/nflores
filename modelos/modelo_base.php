@@ -5,7 +5,7 @@ class Modelo_Base{
 private $user = 'root';
 	private $pass = '';
 	private $host = 'localhost';
-	private $db = 'dbForum';
+	private $db = 'dbforum';
 	protected $conn = null;
 
 	//protected abstract function carga();//????
